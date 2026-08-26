@@ -20,6 +20,12 @@ To return to your local machine: `Cmd+Shift+P` → **Dev Containers: Reopen Fold
 
 ## Compile and run
 
+### Option 1: the ▷ Run button
+
+Open a `.cbl` file (e.g. `HelloWorld.cbl`) and click the **▷ Run Code** button in the editor's top-right corner. The Code Runner extension (installed automatically by the dev container) compiles the file with GnuCOBOL and runs the executable in the terminal.
+
+### Option 2: the terminal
+
 In the dev container terminal (`` Ctrl+` ``):
 
 ```sh
@@ -27,7 +33,7 @@ cobc -x -o HelloWorld HelloWorld.cbl
 ./HelloWorld
 ```
 
-Expected output:
+Expected output (either way):
 
 ```
 Hello, World!
