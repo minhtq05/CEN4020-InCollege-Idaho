@@ -1,0 +1,86 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+2
+Please enter your username:
+jstudent-CEN-4020
+Please enter your password:
+Str0ngPwd!
+Your account has been created successfully.
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+1
+Please enter your username:
+jstudent-CEN-4020
+Please enter your password:
+BadPassword1!
+Incorrect username/password, please try again.
+Please enter your username:
+jstudent-CEN-4020
+Please enter your password:
+Str0ngPwd!
+You have successfully logged in.
+Welcome, jstudent-CEN-4020!
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+1
+Job search/internship is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+2
+Find someone you know is under construction.
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+3
+Learn a New Skill:
+Python Programming
+Public Speaking
+Resume Writing
+Data Analysis
+Networking
+Go Back
+Enter your choice:
+1
+This skill is under construction.
+Learn a New Skill:
+Python Programming
+Public Speaking
+Resume Writing
+Data Analysis
+Networking
+Go Back
+Enter your choice:
+6
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+3
+Learn a New Skill:
+Python Programming
+Public Speaking
+Resume Writing
+Data Analysis
+Networking
+Go Back
+Enter your choice:
+6
+1. Search for a job
+2. Find someone you know
+3. Learn a new skill
+4. Logout
+Enter your choice:
+4
