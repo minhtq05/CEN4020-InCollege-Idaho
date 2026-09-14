@@ -7,10 +7,27 @@ BadPassword1!
 jstudent-CEN-4020
 Str0ngPwd!
 1
+John
+Doe
+University of South Florida
+Computer Science
+2026
+Enthusiastic developer always learning new things.
+yes
+Software Intern
+NVIDIA
+Summer 2026
+Developed tools for internal testing.
+DONE
+yes
+Bachelor of Science
+University of South Florida
+2023-2027
+DONE
 2
 3
+4
+5
 1
 6
-3
 6
-4

@@ -2,13 +2,27 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compile and Run COBOL",
+            "label": "Build and Run InCollege (make)",
             "type": "shell",
-            "command": "cobc -x ${file} -o ${fileDirname}/${fileBasenameNoExtension} && ${fileDirname}/${fileBasenameNoExtension}",
+            "command": "make run",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Compile and Run COBOL (single file)",
+            "type": "shell",
+            "command": "cobc -x ${file} -o ${fileDirname}/${fileBasenameNoExtension} && ${fileDirname}/${fileBasenameNoExtension}",
+            "group": "build",
             "presentation": {
                 "reveal": "always",
                 "panel": "shared"
