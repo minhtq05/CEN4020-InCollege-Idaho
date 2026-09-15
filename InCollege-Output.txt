@@ -7,7 +7,7 @@ Please enter your username:
 jstudent-CEN-4020
 Please enter your password:
 Str0ngPwd!
-Your account has been created successfully.
+That username is already taken, please choose another.
 Welcome to InCollege!
 Log In
 Create New Account
@@ -24,26 +24,100 @@ Please enter your password:
 Str0ngPwd!
 You have successfully logged in.
 Welcome, jstudent-CEN-4020!
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
 Enter your choice:
 1
-Job search/internship is under construction.
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
+--- Create/Edit Profile ---
+Enter First Name:
+John
+Enter Last Name:
+Doe
+Enter University/College Attended:
+University of South Florida
+Enter Major:
+Computer Science
+Enter Graduation Year (YYYY):
+2026
+Enter About Me (optional, max 200 chars, enter blank line to skip):
+Enthusiastic developer always learning new things.
+Add Experience (optional, max 3 entries. Enter 'DONE' to finish):
+yes
+Experience #1 - Title:
+Software Intern
+Experience #1 - Company/Organization:
+NVIDIA
+Experience #1 - Dates (e.g., Summer 2024):
+Summer 2026
+Experience #1 - Description (optional, max 100 chars, blank to skip):
+Developed tools for internal testing.
+Add Experience (optional, max 3 entries. Enter 'DONE' to finish):
+DONE
+Add Education (optional, max 3 entries. Enter 'DONE' to finish):
+yes
+Education #1 - Degree:
+Bachelor of Science
+Education #1 - University/College:
+University of South Florida
+Education #1 - Years Attended (e.g., 2023-2025):
+2023-2027
+Add Education (optional, max 3 entries. Enter 'DONE' to finish):
+DONE
+Profile saved successfully!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
 Enter your choice:
 2
-Find someone you know is under construction.
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
+--- Your Profile ---
+Name: John Doe
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2026
+About Me: Enthusiastic developer always learning new things.
+Experience:
+Title: Software Intern
+Company: NVIDIA
+Dates: Summer 2026
+Description: Developed tools for internal testing.
+Education:
+Degree: Bachelor of Science
+University: University of South Florida
+Years: 2023-2027
+--------------------
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
 Enter your choice:
 3
+Job search/internship is under construction.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+Enter your choice:
+4
+Find someone you know is under construction.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+Enter your choice:
+5
 Learn a New Skill:
 Python Programming
 Public Speaking
@@ -63,24 +137,11 @@ Networking
 Go Back
 Enter your choice:
 6
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
-3
-Learn a New Skill:
-Python Programming
-Public Speaking
-Resume Writing
-Data Analysis
-Networking
-Go Back
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
 Enter your choice:
 6
-1. Search for a job
-2. Find someone you know
-3. Learn a new skill
-4. Logout
-Enter your choice:
-4
