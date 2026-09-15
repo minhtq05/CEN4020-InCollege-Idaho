@@ -98,6 +98,10 @@
        01  WS-FINDROW-APPEND           PIC X.
        01  WS-IDX                      PIC 9(2).
 
+       01  WS-PROFILE-IS-NEW           PIC X VALUE 'N'.
+           88  PROFILE-IS-NEW                    VALUE 'Y'.
+       01  WS-PROFILE-BACKUP           PIC X(1437).
+
        01  WS-PROFILE-ABORT            PIC X VALUE 'N'.
            88  PROFILE-ABORTED                  VALUE 'Y'.
 
@@ -112,8 +116,25 @@
        PROCEDURE DIVISION.
        PROFILE-EDIT-START.
            MOVE 'N' TO WS-PROFILE-ABORT.
-           MOVE 'Y' TO WS-FINDROW-APPEND.
+           MOVE 'N' TO WS-PROFILE-IS-NEW.
+           MOVE 'N' TO WS-FINDROW-APPEND.
            PERFORM PROFILE-FIND-ROW.
+           IF WS-PROFILE-IDX = 0
+               MOVE 'Y' TO WS-FINDROW-APPEND
+               PERFORM PROFILE-FIND-ROW
+               IF WS-PROFILE-IDX = 0
+                   MOVE "Unable to create profile: profile capacity has been reached."
+                       TO WS-MESSAGE
+                   CALL "WRITE-LINE" USING WS-MESSAGE
+                   GOBACK
+               END-IF
+               MOVE 'Y' TO WS-PROFILE-IS-NEW
+               INITIALIZE WS-PROFILE(WS-PROFILE-IDX)
+               MOVE FUNCTION TRIM(WS-CURRENT-USERNAME)
+                   TO WS-PROF-USERNAME(WS-PROFILE-IDX)
+           ELSE
+               MOVE WS-PROFILE(WS-PROFILE-IDX) TO WS-PROFILE-BACKUP
+           END-IF.
            MOVE "--- Create/Edit Profile ---" TO WS-MESSAGE.
            CALL "WRITE-LINE" USING WS-MESSAGE.
 
@@ -225,6 +246,13 @@
                CALL "PROFILE-SAVE"
                MOVE "Profile saved successfully!" TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
+           ELSE
+               IF PROFILE-IS-NEW
+                   INITIALIZE WS-PROFILE(WS-PROFILE-IDX)
+                   SUBTRACT 1 FROM WS-PROFILE-COUNT
+               ELSE
+                   MOVE WS-PROFILE-BACKUP TO WS-PROFILE(WS-PROFILE-IDX)
+               END-IF
            END-IF.
            GOBACK.
 
