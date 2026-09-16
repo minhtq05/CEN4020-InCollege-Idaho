@@ -1,0 +1,39 @@
+1
+jstudent-CEN-4020
+Str0ngPwd!
+1
+Firstname3
+Lastname3
+University of South Florida
+Computer Engineering
+2028
+Multi-talented developer.
+yes
+Intern 1
+Company A
+Summer 2024
+Task 1
+yes
+Intern 2
+Company B
+Summer 2025
+Task 2
+yes
+Intern 3
+Company C
+Summer 2026
+Task 3
+yes
+AS Computer Science
+State College
+2021-2023
+yes
+BS Computer Engineering
+University of South Florida
+2023-2027
+yes
+Cert Web Dev
+Tech Academy
+2024-2024
+2
+6
