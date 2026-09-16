@@ -1,0 +1,26 @@
+2
+newstudent01
+Str0ngPass!
+1
+newstudent01
+Str0ngPass!
+1
+Jane
+Smith
+University of South Florida
+Computer Science
+2027
+Passionate about software engineering and machine learning.
+yes
+Software Intern
+Tech Solutions Inc.
+Summer 2026
+Worked on back-end API microservices.
+DONE
+yes
+Bachelor of Science
+University of South Florida
+2023-2027
+DONE
+2
+6

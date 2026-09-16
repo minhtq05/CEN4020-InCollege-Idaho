@@ -1,0 +1,39 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+1
+Please enter your username:
+jstudent-CEN-4020
+Please enter your password:
+Str0ngPwd!
+You have successfully logged in.
+Welcome, jstudent-CEN-4020!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter First Name:
+John
+Enter Last Name:
+Doe
+Enter University/College Attended:
+University of South Florida
+Enter Major:
+Computer Science
+Enter Graduation Year (YYYY):
+2024
+Graduation Year must be greater than 2025 and less than 2034. Profile not saved.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+Enter your choice:
+6

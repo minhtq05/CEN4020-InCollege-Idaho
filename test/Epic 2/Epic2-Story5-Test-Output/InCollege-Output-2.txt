@@ -2,7 +2,22 @@ Welcome to InCollege!
 Log In
 Create New Account
 Enter your choice:
+2
+Please enter your username:
+jstudent-CEN-4020
+Please enter your password:
+Str0ngPwd!
+That username is already taken, please choose another.
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
 1
+Please enter your username:
+jstudent-CEN-4020
+Please enter your password:
+BadPassword1!
+Incorrect username/password, please try again.
 Please enter your username:
 jstudent-CEN-4020
 Please enter your password:
@@ -19,71 +34,39 @@ Enter your choice:
 1
 --- Create/Edit Profile ---
 Enter First Name:
-Firstname3
+John
 Enter Last Name:
-Lastname3
+Doe
 Enter University/College Attended:
 University of South Florida
 Enter Major:
-Computer Engineering
+Computer Science
 Enter Graduation Year (YYYY):
-2028
+2026
 Enter About Me (optional, max 200 chars, enter blank line to skip):
-Multi-talented developer.
+Enthusiastic developer always learning new things. Enthusiastic developer always learning new things
 Add Experience (optional, max 3 entries. Enter 'DONE' to finish):
 yes
 Experience #1 - Title:
-Intern 1
+Software Intern
 Experience #1 - Company/Organization:
-Company A
+NVIDIA
 Experience #1 - Dates (e.g., Summer 2024):
-Summer 2024
-Experience #1 - Description (optional, max 100 chars, blank to skip):
-Task 1
-Add Experience (optional, max 3 entries. Enter 'DONE' to finish):
-yes
-Experience #2 - Title:
-Intern 2
-Experience #2 - Company/Organization:
-Company B
-Experience #2 - Dates (e.g., Summer 2024):
-Summer 2025
-Experience #2 - Description (optional, max 100 chars, blank to skip):
-Task 2
-Add Experience (optional, max 3 entries. Enter 'DONE' to finish):
-yes
-Experience #3 - Title:
-Intern 3
-Experience #3 - Company/Organization:
-Company C
-Experience #3 - Dates (e.g., Summer 2024):
 Summer 2026
-Experience #3 - Description (optional, max 100 chars, blank to skip):
-Task 3
+Experience #1 - Description (optional, max 100 chars, blank to skip):
+Developed tools for internal testing.
+Add Experience (optional, max 3 entries. Enter 'DONE' to finish):
+DONE
 Add Education (optional, max 3 entries. Enter 'DONE' to finish):
 yes
 Education #1 - Degree:
-AS Computer Science
+Bachelor of Science
 Education #1 - University/College:
-State College
-Education #1 - Years Attended (e.g., 2023-2025):
-2021-2023
-Add Education (optional, max 3 entries. Enter 'DONE' to finish):
-yes
-Education #2 - Degree:
-BS Computer Engineering
-Education #2 - University/College:
 University of South Florida
-Education #2 - Years Attended (e.g., 2023-2025):
+Education #1 - Years Attended (e.g., 2023-2025):
 2023-2027
 Add Education (optional, max 3 entries. Enter 'DONE' to finish):
-yes
-Education #3 - Degree:
-Cert Web Dev
-Education #3 - University/College:
-Tech Academy
-Education #3 - Years Attended (e.g., 2023-2025):
-2024-2024
+DONE
 Profile saved successfully!
 1. Create/Edit My Profile
 2. View My Profile
@@ -94,34 +77,20 @@ Profile saved successfully!
 Enter your choice:
 2
 --- Your Profile ---
-Name: Firstname3 Lastname3
+Name: John Doe
 University: University of South Florida
-Major: Computer Engineering
-Graduation Year: 2028
-About Me: Multi-talented developer.
+Major: Computer Science
+Graduation Year: 2026
+About Me: Enthusiastic developer always learning new things. Enthusiastic developer always learning
 Experience:
-Title: Intern 1
-Company: Company A
-Dates: Summer 2024
-Description: Task 1
-Title: Intern 2
-Company: Company B
-Dates: Summer 2025
-Description: Task 2
-Title: Intern 3
-Company: Company C
+Title: Software Intern
+Company: NVIDIA
 Dates: Summer 2026
-Description: Task 3
+Description: Developed tools for internal testing.
 Education:
-Degree: AS Computer Science
-University: State College
-Years: 2021-2023
-Degree: BS Computer Engineering
+Degree: Bachelor of Science
 University: University of South Florida
 Years: 2023-2027
-Degree: Cert Web Dev
-University: Tech Academy
-Years: 2024-2024
 --------------------
 1. Create/Edit My Profile
 2. View My Profile
@@ -130,4 +99,3 @@ Years: 2024-2024
 5. Learn a New Skill
 6. Logout
 Enter your choice:
-6

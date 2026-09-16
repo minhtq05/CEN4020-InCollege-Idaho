@@ -1,0 +1,132 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+2
+Please enter your username:
+jstudent-CEN-4020
+Please enter your password:
+Str0ngPwd!
+That username is already taken, please choose another.
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+1
+Please enter your username:
+jstudent-CEN-4020
+Please enter your password:
+BadPassword1!
+Incorrect username/password, please try again.
+Please enter your username:
+jstudent-CEN-4020
+Please enter your password:
+Str0ngPwd!
+You have successfully logged in.
+Welcome, jstudent-CEN-4020!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+Enter your choice:
+1
+--- Create/Edit Profile ---
+Enter First Name:
+John
+Enter Last Name:
+Doe
+Enter University/College Attended:
+University of South Florida
+Enter Major:
+Computer Science
+Enter Graduation Year (YYYY):
+2026
+Enter About Me (optional, max 200 chars, enter blank line to skip):
+Enthusiastic developer always learning new things.
+Add Experience (optional, max 3 entries. Enter 'DONE' to finish):
+DONE
+Add Education (optional, max 3 entries. Enter 'DONE' to finish):
+yes
+Education #1 - Degree:
+Bachelor of Science
+Education #1 - University/College:
+University of South Florida
+Education #1 - Years Attended (e.g., 2023-2025):
+2023-2027
+Add Education (optional, max 3 entries. Enter 'DONE' to finish):
+DONE
+Profile saved successfully!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+Enter your choice:
+2
+--- Your Profile ---
+Name: John Doe
+University: University of South Florida
+Major: Computer Science
+Graduation Year: 2026
+About Me: Enthusiastic developer always learning new things.
+Education:
+Degree: Bachelor of Science
+University: University of South Florida
+Years: 2023-2027
+--------------------
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+Enter your choice:
+3
+Job search/internship is under construction.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+Enter your choice:
+4
+Find someone you know is under construction.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+Enter your choice:
+5
+Learn a New Skill:
+Python Programming
+Public Speaking
+Resume Writing
+Data Analysis
+Networking
+Go Back
+Enter your choice:
+1
+This skill is under construction.
+Learn a New Skill:
+Python Programming
+Public Speaking
+Resume Writing
+Data Analysis
+Networking
+Go Back
+Enter your choice:
+6
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+Enter your choice:
+6
