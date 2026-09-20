@@ -93,36 +93,61 @@ Profile saved successfully!
 6. Logout
 Enter your choice:
 2
---- Your Profile ---
-Name: Firstname3 Lastname3
-University: University of South Florida
-Major: Computer Engineering
-Graduation Year: 2028
-About Me: Multi-talented developer.
+==== Profile for Firstname3 Lastname3
+
+Name:             Firstname3 Lastname3
+University:       University of South Florida
+Major:            Computer Engineering
+Graduation Year:  2028
+About Me:         Multi-talented developer.
+
 Experience:
-Title: Intern 1
-Company: Company A
-Dates: Summer 2024
-Description: Task 1
-Title: Intern 2
-Company: Company B
-Dates: Summer 2025
-Description: Task 2
-Title: Intern 3
-Company: Company C
-Dates: Summer 2026
-Description: Task 3
+  Experience #1:
+    Title:        Intern 1
+    Company:      Company A
+    Dates:        Summer 2024
+    Description:  Task 1
+
+  Experience #2:
+    Title:        Intern 2
+    Company:      Company B
+    Dates:        Summer 2025
+    Description:  Task 2
+
+  Experience #3:
+    Title:        Intern 3
+    Company:      Company C
+    Dates:        Summer 2026
+    Description:  Task 3
+
 Education:
-Degree: AS Computer Science
-University: State College
-Years: 2021-2023
-Degree: BS Computer Engineering
-University: University of South Florida
-Years: 2023-2027
-Degree: Cert Web Dev
-University: Tech Academy
-Years: 2024-2024
+  Education #1:
+    Degree:       AS Computer Science
+    University:   State College
+    Years:        2021-2023
+
+  Education #2:
+    Degree:       BS Computer Engineering
+    University:   University of South Florida
+    Years:        2023-2027
+
+  Education #3:
+    Degree:       Cert Web Dev
+    University:   Tech Academy
+    Years:        2024-2024
+
 --------------------
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+Nobody Here
+They are not yet a part of the InCollege system.
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job
