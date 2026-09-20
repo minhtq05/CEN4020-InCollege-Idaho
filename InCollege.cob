@@ -100,9 +100,7 @@
                                TO WS-MESSAGE
                            CALL "WRITE-LINE" USING WS-MESSAGE
                        WHEN "4"
-                           MOVE "Find someone you know is under construction."
-                               TO WS-MESSAGE
-                           CALL "WRITE-LINE" USING WS-MESSAGE
+                           CALL "USER-SEARCH"
                        WHEN "5"
                            CALL "SKILL-MENU"
                        WHEN "6"

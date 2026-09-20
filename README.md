@@ -61,6 +61,7 @@ file is a monolith:
 | `InCollege-Profile.cob` | `PROFILE-LOAD` / `PROFILE-SAVE` / `PROFILE-EDIT`. |
 | `InCollege-ProfileEntries.cob` | `PROFILE-EXPERIENCE` / `PROFILE-EDUCATION` (repeatable entries). |
 | `InCollege-ProfileView.cob` | `PROFILE-VIEW`. |
+| `InCollege-UserSearch.cob` | `USER-SEARCH` — exact full-name lookup across saved profiles. |
 | `InCollege-Skills.cob` | `SKILL-MENU`. |
 | `InCollege-*.cpy` | Shared record layouts and `EXTERNAL` session/table data, included via `COPY` where more than one program needs the same shape. |
 
@@ -149,3 +150,9 @@ creation and a profile view; the matching expected output is in
 Profiles are saved to `InCollege-Profiles.txt` (created/overwritten in the current directory),
 one record per profile keyed by username, and reloaded on the next run so a profile persists
 across restarts just like accounts do.
+
+### Finding another user
+
+Choose **4** after logging in and enter the person's full name as `First Last`. The search
+uses an exact, case-sensitive comparison against other users' saved profile names and reports
+whether that person is part of the InCollege system.
