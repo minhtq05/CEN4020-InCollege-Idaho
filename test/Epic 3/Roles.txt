@@ -1,0 +1,5 @@
+Urdaneta Herrera, Emerson   - Scrum Master
+Vazquez Delgado, Jezrael    - Developer #1
+Toptchi, Nicholas           - Developer #2
+Tran, Quang Minh            - Tester #1
+Tu, Sandra                  - Tester #2
