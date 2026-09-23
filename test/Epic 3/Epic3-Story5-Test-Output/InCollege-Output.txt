@@ -18,7 +18,7 @@ Welcome, jstudent!
 Enter your choice:
 4
 Enter the full name of the person you are looking for:
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+Jane
 No one by that name could be found.
 1. Create/Edit My Profile
 2. View My Profile
@@ -29,7 +29,7 @@ No one by that name could be found.
 Enter your choice:
 4
 Enter the full name of the person you are looking for:
-Firstname3 Lastname4
+jane smith
 No one by that name could be found.
 1. Create/Edit My Profile
 2. View My Profile
@@ -40,7 +40,7 @@ No one by that name could be found.
 Enter your choice:
 4
 Enter the full name of the person you are looking for:
-Firstname2 Lastname3
+Jane  Smith
 No one by that name could be found.
 1. Create/Edit My Profile
 2. View My Profile
@@ -51,29 +51,8 @@ No one by that name could be found.
 Enter your choice:
 4
 Enter the full name of the person you are looking for:
-Jane Smith
-==== Profile for Jane Smith
-
-Name:             Jane Smith
-University:       University of South Florida
-Major:            Computer Science
-Graduation Year:  2027
-About Me:         Passionate about software engineering and machine learning.
-
-Experience:
-  Experience #1:
-    Title:        Software Intern
-    Company:      Tech Solutions Inc.
-    Dates:        Summer 2026
-    Description:  Worked on back-end API microservices.
-
-Education:
-  Education #1:
-    Degree:       Bachelor of Science
-    University:   University of South Florida
-    Years:        2023-2027
-
---------------------
+Smith Jane
+No one by that name could be found.
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job

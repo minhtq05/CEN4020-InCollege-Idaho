@@ -1,0 +1,15 @@
+1
+jstudent
+Passw0rd!
+2
+1
+John
+Student
+State University
+Undeclared
+2030
+
+DONE
+DONE
+2
+6
