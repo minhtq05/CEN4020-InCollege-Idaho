@@ -15,6 +15,8 @@
        COPY "InCollege-PendingRequest.cpy".
 
        WORKING-STORAGE SECTION.
+       COPY "InCollege-Common.cpy".
+       COPY "InCollege-PendingRequestTable.cpy".
        01  WS-FREQ-FILE-STATUS         PIC X(2).
        01  WS-FREQ-EOF                 PIC X VALUE 'N'.
 
@@ -50,6 +52,8 @@
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
+       COPY "InCollege-Common.cpy".
+       COPY "InCollege-PendingRequestTable.cpy".
        01  WS-MESSAGE                  PIC X(100).
        01  WS-IDX                      PIC 9(2).
        01  WS-FOUND                    PIC X VALUE 'N'.
@@ -68,6 +72,7 @@
                            CALL "WRITE-LINE" USING WS-MESSAGE
                            MOVE 'Y' TO WS-FOUND
                        END-IF
+                       MOVE SPACES TO WS-MESSAGE
                        STRING "  From: "
                               FUNCTION TRIM(WS-FREQ-SENDER(WS-IDX))
                               DELIMITED BY SIZE
@@ -115,6 +120,8 @@
        COPY "InCollege-PendingRequest.cpy".
 
        WORKING-STORAGE SECTION.
+       COPY "InCollege-Common.cpy".
+       COPY "InCollege-PendingRequestTable.cpy".
        01  WS-FREQ-FILE-STATUS         PIC X(2).
        01  WS-MESSAGE                  PIC X(100).
        01  WS-IDX                      PIC 9(2).
@@ -123,6 +130,8 @@
        01  WS-ALREADY-SENT             PIC X VALUE 'N'.
        01  WS-ALREADY-RECEIVED         PIC X VALUE 'N'.
        01  WS-SAVE-OK                  PIC X VALUE 'N'.
+
+       COPY "InCollege-AccountTable.cpy".
 
        LINKAGE SECTION.
        01  LS-TARGET-USERNAME          PIC X(20).

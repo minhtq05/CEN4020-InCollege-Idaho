@@ -18,7 +18,7 @@ COPYBOOKS := InCollege-Common.cpy \
              InCollege-PendingRequest.cpy \
              InCollege-PendingRequestTable.cpy
 
-.PHONY: all run clean
+.PHONY: all run test clean
 
 all: $(TARGET)
 
@@ -27,6 +27,9 @@ $(TARGET): $(SOURCES) $(COPYBOOKS)
 
 run: all
 	./$(TARGET)
+
+test:
+	COBC="$(COBC)" python3 test/test_connection_input.py
 
 clean:
 	rm -f $(TARGET) *.o
