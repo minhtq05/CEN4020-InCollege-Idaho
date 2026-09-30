@@ -33,6 +33,7 @@
            MOVE SPACES TO WS-CURRENT-USERNAME.
            CALL "ACCOUNT-LOAD".
            CALL "PROFILE-LOAD".
+           CALL "FREQ-LOAD".
            PERFORM UNTIL PROGRAM-DONE OR END-OF-INPUT
                PERFORM TOP-LEVEL-MENU
            END-PERFORM.
@@ -85,6 +86,8 @@
                CALL "WRITE-LINE" USING WS-MESSAGE
                MOVE "6. Logout" TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
+               MOVE "7. View pending requests" to WS-MESSAGE
+               CALL "WRITE-LINE" USING WS-MESSAGE
                MOVE "Enter your choice:" TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
                CALL "READ-LINE" USING WS-LINE-TEXT
@@ -106,6 +109,8 @@
                        WHEN "6"
                            MOVE 'Y' TO WS-LOGOUT-FLAG
                            MOVE 'Y' TO WS-PROGRAM-DONE
+                       WHEN "7"
+                           CALL "FREQ-VIEW-PENDING"
                        WHEN OTHER
                            MOVE "Invalid choice, please try again."
                                TO WS-MESSAGE

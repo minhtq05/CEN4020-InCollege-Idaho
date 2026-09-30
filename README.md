@@ -87,7 +87,7 @@ sample walkthrough is committed at [`InCollege-Input.txt`](InCollege-Input.txt) 
 account, fails a login once, logs in successfully, visits every post-login menu option, and logs
 out.
 
-Menu choices are entered as numbers (`1`/`2` at the top level, `1`-`4` after logging in, `1`-`5`
+Menu choices are entered as numbers (`1`/`2` at the top level, `1`-`7` after logging in, `1`-`5`
 plus `6` for "Go Back" in the skills menu). Passwords must be 8-12 characters with at least one
 uppercase letter, one digit, and one special character.
 
@@ -120,6 +120,7 @@ Logged-in users can now create and view a personal profile from the post-login m
 4. Find someone you know
 5. Learn a New Skill
 6. Logout
+7. View pending requests
 ```
 
 ### Preparing input for profile creation
@@ -156,3 +157,47 @@ across restarts just like accounts do.
 Choose **4** after logging in and enter the person's full name as `First Last`. The search
 uses an exact, case-sensitive comparison against other users' saved profile names and reports
 whether that person is part of the InCollege system.
+
+
+## File-based connection request testing
+
+All connection-request inputs use the same `InCollege-Input.txt` stream as login and the
+main menus. Put one response per line: choose **4** to search, enter the recipient's exact
+full name, then choose **1** to send a connection request or **2** to return to the main
+menu. Invalid choices (including blank lines) consume one line and prompt again. End of
+file exits cleanly, including at the search and connection-choice prompts; it never sends
+a request without reading a valid **1** choice.
+
+For example, with an existing `alice` account whose password is `Test123!` and another
+account with a saved profile named `Bob Tester`, use:
+
+```text
+1
+alice
+Test123!
+4
+Bob Tester
+1
+6
+```
+
+Run `make run`. Prompts, input echoes, and results appear in `InCollege-Output.txt` and
+on screen. A successful request is saved in `InCollege-Requests.txt` with `PENDING`
+status. On a later run, the recipient can log in and choose **7** to see it. Sending the
+same request again reports a duplicate. Account, profile, and request files persist
+between runs, so use a fresh working directory for independent scenarios.
+
+### Automated regression tests
+
+With GnuCOBOL, Make, and Python 3 installed, run:
+
+```sh
+make test
+```
+
+The tests build a fresh executable and create accounts, profiles, and input files in
+temporary directories, leaving the repository's sample data and executable untouched.
+Standard input is closed and each run has a timeout, so keyboard input or an EOF loop
+fails the test. Coverage includes sending and reloading pending requests, going back,
+invalid/blank choices, duplicate and incoming requests, repeated searches, and EOF at
+each connection prompt. Every run also checks that screen output matches the output file.

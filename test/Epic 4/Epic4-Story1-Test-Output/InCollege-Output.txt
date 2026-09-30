@@ -1,0 +1,58 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+1
+Please enter your username:
+jstudent
+Please enter your password:
+Passw0rd!
+You have successfully logged in.
+Welcome, jstudent!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+Enter your choice:
+7
+No pending connection requests.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+Jane Smith
+--------------------
+Profile of Jane Smith
+Graduation Year: 2027
+Major: Computer Science
+University: University of South Florida
+About: Passionate about software engineering and machine learning.
+Experience:
+  - Software Intern at Tech Solutions Inc. (Summer 2026)
+    Description: Worked on back-end API microservices.
+Education:
+  - Bachelor of Science, University of South Florida (2023-2027)
+--------------------
+1. Send Connection Request
+2. Back to Main Menu
+Enter your choice:
+1
+Connection request sent successfully.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+Enter your choice:
+6
