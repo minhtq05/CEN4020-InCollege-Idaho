@@ -20,6 +20,7 @@ Enter your choice:
 7
 Pending connection requests:
   From: jstudent-CEN-4020
+  From: newstudent01
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job

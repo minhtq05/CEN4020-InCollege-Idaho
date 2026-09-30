@@ -17,9 +17,10 @@ Welcome, jstudent!
 6. Logout
 7. View pending requests
 Enter your choice:
-7
-Pending connection requests:
-  From: jstudent-CEN-4020
+4
+Enter the full name of the person you are looking for:
+Nobody Real
+No one by that name could be found.
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job
