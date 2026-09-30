@@ -1,12 +1,4 @@
 1
-jstudent
-Passw0rd!
-4
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-4
-Firstname3 Lastname4
-4
-Firstname2 Lastname3
-4
-Jane Smith
-6
+newstudent01
+Str0ngPass!
+7
