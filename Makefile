@@ -7,6 +7,7 @@ SOURCES := InCollege.cob \
            InCollege-ProfileEntries.cob \
            InCollege-ProfileView.cob \
            InCollege-UserSearch.cob \
+           InCollege-ViewConnections.cob \
            InCollege-Skills.cob \
            InCollege-PendingRequestFun.cob
 COPYBOOKS := InCollege-Common.cpy \

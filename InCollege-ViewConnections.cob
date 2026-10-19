@@ -1,0 +1,101 @@
+*>*******************************************************
+       *> InCollege-ViewConnections.cob
+	*> Lists users connected to the currently logged-in user by
+	*> accepted connection requests, showing each username and
+	*> the name from their saved profile when available.
+       *>*******************************************************
+        >>SOURCE FORMAT FREE
+	   IDENTIFICATION DIVISION.
+	   PROGRAM-ID. VIEW-CONNECTIONS.
+
+	   DATA DIVISION.
+	   WORKING-STORAGE SECTION.
+	   COPY "InCollege-Common.cpy".
+	   COPY "InCollege-PendingRequestTable.cpy".
+	   COPY "InCollege-ProfileTable.cpy".
+
+	   01  WS-MESSAGE                  PIC X(100).
+	   01  WS-REQUEST-IDX              PIC 9(2).
+	   01  WS-PROFILE-IDX              PIC 9(2).
+	   01  WS-CONNECTION-COUNT         PIC 9(2) VALUE 0.
+	   01  WS-CONNECTION-USERNAME      PIC X(20).
+	   01  WS-CONNECTION-NAME          PIC X(61).
+
+	   PROCEDURE DIVISION.
+	   VIEW-CONNECTIONS-START.
+		   MOVE "--- Your Connections ---" TO WS-MESSAGE
+		   CALL "WRITE-LINE" USING WS-MESSAGE
+		   MOVE 0 TO WS-CONNECTION-COUNT
+
+		   IF WS-FREQ-COUNT > 0
+			   PERFORM VARYING WS-REQUEST-IDX FROM 1 BY 1
+					   UNTIL WS-REQUEST-IDX > WS-FREQ-COUNT
+				   IF FUNCTION TRIM(WS-FREQ-STATUS(WS-REQUEST-IDX)) =
+					  "ACCEPTED"
+					   MOVE SPACES TO WS-CONNECTION-USERNAME
+					   IF FUNCTION TRIM(
+							  WS-FREQ-SENDER(WS-REQUEST-IDX)) =
+						  FUNCTION TRIM(WS-CURRENT-USERNAME)
+						   MOVE WS-FREQ-RECEIVER(WS-REQUEST-IDX)
+							   TO WS-CONNECTION-USERNAME
+					   ELSE
+						   IF FUNCTION TRIM(
+								  WS-FREQ-RECEIVER(WS-REQUEST-IDX)) =
+							  FUNCTION TRIM(WS-CURRENT-USERNAME)
+							   MOVE WS-FREQ-SENDER(WS-REQUEST-IDX)
+								   TO WS-CONNECTION-USERNAME
+						   END-IF
+					   END-IF
+
+					   IF WS-CONNECTION-USERNAME NOT = SPACES
+						   ADD 1 TO WS-CONNECTION-COUNT
+						   PERFORM DISPLAY-CONNECTION
+					   END-IF
+				   END-IF
+			   END-PERFORM
+		   END-IF
+
+		   IF WS-CONNECTION-COUNT = 0
+			   MOVE "You have no connections yet." TO WS-MESSAGE
+			   CALL "WRITE-LINE" USING WS-MESSAGE
+		   END-IF
+		   GOBACK.
+
+	   DISPLAY-CONNECTION.
+		   MOVE "Name unavailable" TO WS-CONNECTION-NAME
+		   IF WS-PROFILE-COUNT > 0
+			   PERFORM VARYING WS-PROFILE-IDX FROM 1 BY 1
+					   UNTIL WS-PROFILE-IDX > WS-PROFILE-COUNT
+				   IF FUNCTION TRIM(WS-PROF-USERNAME(WS-PROFILE-IDX)) =
+					  FUNCTION TRIM(WS-CONNECTION-USERNAME)
+					   IF FUNCTION TRIM(
+							  WS-PROF-FIRST-NAME(WS-PROFILE-IDX)) NOT =
+							  SPACES OR FUNCTION TRIM(
+							  WS-PROF-LAST-NAME(WS-PROFILE-IDX)) NOT =
+							  SPACES
+						   MOVE SPACES TO WS-CONNECTION-NAME
+						   STRING FUNCTION TRIM(
+									  WS-PROF-FIRST-NAME(WS-PROFILE-IDX))
+									  DELIMITED BY SIZE
+								  " " DELIMITED BY SIZE
+								  FUNCTION TRIM(
+									  WS-PROF-LAST-NAME(WS-PROFILE-IDX))
+									  DELIMITED BY SIZE
+								  INTO WS-CONNECTION-NAME
+						   END-STRING
+					   END-IF
+				   END-IF
+			   END-PERFORM
+		   END-IF
+
+		   MOVE SPACES TO WS-MESSAGE
+		   STRING "Username: " DELIMITED BY SIZE
+				  FUNCTION TRIM(WS-CONNECTION-USERNAME)
+					  DELIMITED BY SIZE
+				  " | Name: " DELIMITED BY SIZE
+				  FUNCTION TRIM(WS-CONNECTION-NAME)
+					  DELIMITED BY SIZE
+				  INTO WS-MESSAGE
+		   END-STRING
+		   CALL "WRITE-LINE" USING WS-MESSAGE.
+	   END PROGRAM VIEW-CONNECTIONS.
