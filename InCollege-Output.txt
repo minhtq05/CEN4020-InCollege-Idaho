@@ -16,16 +16,12 @@ Welcome, jstudent!
 5. Learn a New Skill
 6. Logout
 7. View pending requests
+8. View connections
 Enter your choice:
-7
-Pending connection requests:
-  From: jstudent-CEN-4020
-1. Create/Edit My Profile
-2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a New Skill
-6. Logout
-7. View pending requests
+8
+--- Your Network ---
+Username: newstudent01 | Name: Jane Smith
+1: Return to menu
+2: Log out
 Enter your choice:
-6
+2

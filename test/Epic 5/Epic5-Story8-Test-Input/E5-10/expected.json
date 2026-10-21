@@ -1,0 +1,28 @@
+{
+  "id": "E5-10",
+  "title": "Invalid and blank decisions reprompt then accept",
+  "pending": [
+    "bob"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "wrong",
+        "",
+        "3",
+        "1",
+        "6"
+      ],
+      "require": [
+        "Invalid",
+        "(?=.*(?:bob|Bob Tester)).*accept"
+      ],
+      "forbid": [],
+      "pending": []
+    }
+  ]
+}

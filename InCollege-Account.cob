@@ -96,7 +96,7 @@
 
        PROCEDURE DIVISION.
        ACCOUNT-CREATE-START.
-           IF WS-ACCOUNT-COUNT >= 5
+           IF WS-ACCOUNT-COUNT >= 10
                MOVE "All permitted accounts have been created, please come back later"
                    TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE

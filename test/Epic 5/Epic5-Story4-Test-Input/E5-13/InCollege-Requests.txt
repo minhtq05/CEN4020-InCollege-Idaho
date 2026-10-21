@@ -1,0 +1,2 @@
+bob                 alice               PENDING
+carol               alice               PENDING

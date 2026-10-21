@@ -1,0 +1,42 @@
+{
+  "id": "E5-09",
+  "title": "Already connected sender cannot resend",
+  "pending": [
+    "bob"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?=.*(?:bob|Bob Tester)).*accept"
+      ],
+      "forbid": [],
+      "pending": []
+    },
+    {
+      "input": [
+        "1",
+        "bob",
+        "Test123!",
+        "4",
+        "Alice Tester",
+        "1",
+        "6"
+      ],
+      "require": [
+        "already connected"
+      ],
+      "forbid": [
+        "sent successfully"
+      ],
+      "pending": []
+    }
+  ]
+}

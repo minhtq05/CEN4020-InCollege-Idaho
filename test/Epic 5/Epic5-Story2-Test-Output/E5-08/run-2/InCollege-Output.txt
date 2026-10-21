@@ -1,0 +1,50 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+1
+Please enter your username:
+bob
+Please enter your password:
+Test123!
+You have successfully logged in.
+Welcome, bob!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+8. View connections
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+Alice Tester
+--------------------
+Profile of Alice Tester
+Graduation Year: 2027
+Major: Computer Science
+University: Test University
+About: Hello
+Experience:
+  - Intern at Example Company (2025-2026)
+    Description: Built tests
+Education:
+  - BS, Test University (2023-2027)
+--------------------
+1. Send Connection Request
+2. Back to Main Menu
+Enter your choice:
+1
+You cannot send a connection request to this user.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+8. View connections
+Enter your choice:
+6

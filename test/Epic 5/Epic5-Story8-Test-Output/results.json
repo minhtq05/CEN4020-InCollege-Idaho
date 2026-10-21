@@ -1,0 +1,128 @@
+[
+  {
+    "id": "E5-01",
+    "title": "Accept one request; remove pending; reciprocal network after restart",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-02",
+    "title": "Accept multiple requests in file order",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-03",
+    "title": "Reject one request; no connection after restart",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-04",
+    "title": "Reject multiple requests",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-05",
+    "title": "Mixed decisions retain only accepted connections",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-06",
+    "title": "Empty network and return to main menu",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-07",
+    "title": "Pending users excluded from network",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-08",
+    "title": "Rejected sender cannot resend after restart",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-09",
+    "title": "Already connected sender cannot resend",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-10",
+    "title": "Invalid and blank decisions reprompt then accept",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-11",
+    "title": "EOF before decision leaves request unchanged",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-12",
+    "title": "EOF after invalid decision leaves request unchanged",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-13",
+    "title": "EOF after first decision preserves remaining request",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-14",
+    "title": "EOF at network return prompt exits cleanly",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-15",
+    "title": "Invalid network return choice reprompts",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-16",
+    "title": "Empty pending list returns to menu",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-17",
+    "title": "Other user cannot process recipient requests",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-18",
+    "title": "Repeated pending view does not reprocess accepted request",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-19",
+    "title": "Accept immediately at EOF persists",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-20",
+    "title": "Reject immediately at EOF persists",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "id": "E5-21",
+    "title": "Ten account capacity and eleventh refusal",
+    "status": "PASS",
+    "errors": []
+  }
+]

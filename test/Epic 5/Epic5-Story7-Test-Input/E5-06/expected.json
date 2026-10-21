@@ -1,0 +1,25 @@
+{
+  "id": "E5-06",
+  "title": "Empty network and return to main menu",
+  "pending": [],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "8",
+        "1",
+        "7",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections",
+        "No (?:established )?connections|network is empty",
+        "No pending",
+        "1[.):]?\\s*(?:Return|Back|Go back)"
+      ],
+      "forbid": []
+    }
+  ]
+}

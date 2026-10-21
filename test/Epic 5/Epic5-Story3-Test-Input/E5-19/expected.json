@@ -1,0 +1,41 @@
+{
+  "id": "E5-19",
+  "title": "Accept immediately at EOF persists",
+  "pending": [
+    "bob"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "1"
+      ],
+      "require": [
+        "(?=.*(?:bob|Bob Tester)).*accept"
+      ],
+      "forbid": [],
+      "pending": []
+    },
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "8",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections",
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Bob Tester"
+      ],
+      "forbid": [],
+      "network": [
+        "Bob Tester"
+      ]
+    }
+  ]
+}

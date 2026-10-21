@@ -1,0 +1,27 @@
+{
+  "id": "E5-15",
+  "title": "Invalid network return choice reprompts",
+  "pending": [],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "8",
+        "wrong",
+        "",
+        "1",
+        "7",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections",
+        "Invalid",
+        "No pending",
+        "1[.):]?\\s*(?:Return|Back|Go back)"
+      ],
+      "forbid": []
+    }
+  ]
+}

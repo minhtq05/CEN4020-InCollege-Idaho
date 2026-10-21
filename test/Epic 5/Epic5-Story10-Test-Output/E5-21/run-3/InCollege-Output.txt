@@ -1,0 +1,10 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+2
+All permitted accounts have been created, please come back later
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:

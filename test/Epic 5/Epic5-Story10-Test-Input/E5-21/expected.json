@@ -1,0 +1,54 @@
+{
+  "id": "E5-21",
+  "title": "Ten account capacity and eleventh refusal",
+  "pending": [],
+  "runs": [
+    {
+      "input": [
+        "2",
+        "user5",
+        "Test123!",
+        "2",
+        "user6",
+        "Test123!",
+        "2",
+        "user7",
+        "Test123!",
+        "2",
+        "user8",
+        "Test123!",
+        "2",
+        "user9",
+        "Test123!",
+        "2",
+        "user10",
+        "Test123!"
+      ],
+      "accounts": 10,
+      "require": [],
+      "forbid": []
+    },
+    {
+      "input": [
+        "1",
+        "user10",
+        "Test123!",
+        "6"
+      ],
+      "require": [
+        "successfully logged in"
+      ],
+      "forbid": []
+    },
+    {
+      "input": [
+        "2"
+      ],
+      "accounts": 10,
+      "require": [
+        "maximum|limit|full|All permitted accounts have been created"
+      ],
+      "forbid": []
+    }
+  ]
+}

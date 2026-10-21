@@ -1,0 +1,26 @@
+{
+  "id": "E5-07",
+  "title": "Pending users excluded from network",
+  "pending": [
+    "bob"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "8",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections"
+      ],
+      "forbid": [
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Bob Tester"
+      ],
+      "network": []
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "E5-17",
+  "title": "Other user cannot process recipient requests",
+  "pending": [
+    "bob"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "carol",
+        "Test123!",
+        "7",
+        "6"
+      ],
+      "require": [
+        "No pending"
+      ],
+      "forbid": [],
+      "pending": [
+        "bob"
+      ]
+    }
+  ]
+}

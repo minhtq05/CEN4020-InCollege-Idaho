@@ -1,0 +1,38 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+1
+Please enter your username:
+alice
+Please enter your password:
+Test123!
+You have successfully logged in.
+Welcome, alice!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+8. View connections
+Enter your choice:
+8
+--- Your Network ---
+Username: bob | Name: Bob Tester
+Username: dave | Name: Dave Tester
+1: Return to menu
+2: Log out
+Enter your choice:
+1
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+8. View connections
+Enter your choice:
+6

@@ -1,0 +1,64 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+2
+Please enter your username:
+user5
+Please enter your password:
+Test123!
+Your account has been created successfully.
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+2
+Please enter your username:
+user6
+Please enter your password:
+Test123!
+Your account has been created successfully.
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+2
+Please enter your username:
+user7
+Please enter your password:
+Test123!
+Your account has been created successfully.
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+2
+Please enter your username:
+user8
+Please enter your password:
+Test123!
+Your account has been created successfully.
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+2
+Please enter your username:
+user9
+Please enter your password:
+Test123!
+Your account has been created successfully.
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+2
+Please enter your username:
+user10
+Please enter your password:
+Test123!
+Your account has been created successfully.
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:

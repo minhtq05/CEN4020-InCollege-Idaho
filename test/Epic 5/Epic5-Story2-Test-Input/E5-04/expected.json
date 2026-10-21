@@ -1,0 +1,45 @@
+{
+  "id": "E5-04",
+  "title": "Reject multiple requests",
+  "pending": [
+    "bob",
+    "carol"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "2",
+        "2",
+        "6"
+      ],
+      "require": [
+        "(?=.*(?:bob|Bob Tester)).*reject",
+        "carol.*reject"
+      ],
+      "forbid": [],
+      "pending": []
+    },
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "8",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections"
+      ],
+      "forbid": [
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Bob Tester",
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Carol Tester"
+      ],
+      "network": []
+    }
+  ]
+}
