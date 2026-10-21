@@ -88,6 +88,8 @@
                CALL "WRITE-LINE" USING WS-MESSAGE
                MOVE "7. View pending requests" to WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
+               MOVE "8. View connections" TO WS-MESSAGE
+               CALL "WRITE-LINE" USING WS-MESSAGE
                MOVE "Enter your choice:" TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
                CALL "READ-LINE" USING WS-LINE-TEXT
@@ -111,6 +113,8 @@
                            MOVE 'Y' TO WS-PROGRAM-DONE
                        WHEN "7"
                            CALL "FREQ-VIEW-PENDING"
+                       WHEN "8"
+                           CALL "VIEW-CONNECTIONS"
                        WHEN OTHER
                            MOVE "Invalid choice, please try again."
                                TO WS-MESSAGE
