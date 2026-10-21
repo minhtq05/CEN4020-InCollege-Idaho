@@ -1,0 +1,22 @@
+{
+  "id": "E5-16",
+  "title": "Empty pending list returns to menu",
+  "pending": [],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "7",
+        "6"
+      ],
+      "require": [
+        "No pending"
+      ],
+      "forbid": [],
+      "pending": []
+    }
+  ]
+}

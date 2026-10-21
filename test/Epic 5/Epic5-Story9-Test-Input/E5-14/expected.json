@@ -1,0 +1,20 @@
+{
+  "id": "E5-14",
+  "title": "EOF at network return prompt exits cleanly",
+  "pending": [],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "8"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections",
+        "return|go back"
+      ],
+      "forbid": []
+    }
+  ]
+}

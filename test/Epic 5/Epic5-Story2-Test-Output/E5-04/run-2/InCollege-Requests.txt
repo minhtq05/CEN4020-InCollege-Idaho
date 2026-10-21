@@ -1,0 +1,2 @@
+bob                 alice               REJECTED
+carol               alice               REJECTED

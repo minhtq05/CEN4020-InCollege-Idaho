@@ -1,0 +1,65 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+1
+Please enter your username:
+jstudent
+Please enter your password:
+Passw0rd!
+You have successfully logged in.
+Welcome, jstudent!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+Enter your choice:
+4
+Enter the full name of the person you are looking for:
+Firstname3 Lastname3
+--------------------
+Profile of Firstname3 Lastname3
+Graduation Year: 2028
+Major: Computer Engineering
+University: University of South Florida
+About: Multi-talented developer.
+Experience:
+  - Intern 1 at Company A (Summer 2024)
+    Description: Task 1
+  - Intern 2 at Company B (Summer 2025)
+    Description: Task 2
+  - Intern 3 at Company C (Summer 2026)
+    Description: Task 3
+Education:
+  - AS Computer Science, State College (2021-2023)
+  - BS Computer Engineering, University of South Florida (2023-2027)
+  - Cert Web Dev, Tech Academy (2024-2024)
+--------------------
+1. Send Connection Request
+2. Back to Main Menu
+Enter your choice:
+1
+This user already sent you a request. See option 7.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+Enter your choice:
+7
+Pending connection requests:
+  From: jstudent-CEN-4020
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+Enter your choice:
+6

@@ -1,0 +1,44 @@
+{
+  "id": "E5-18",
+  "title": "Repeated pending view does not reprocess accepted request",
+  "pending": [
+    "bob"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "1",
+        "7",
+        "6"
+      ],
+      "require": [
+        "(?=.*(?:bob|Bob Tester)).*accept",
+        "No pending"
+      ],
+      "forbid": [],
+      "pending": []
+    },
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "8",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections",
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Bob Tester"
+      ],
+      "forbid": [],
+      "network": [
+        "Bob Tester"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+1
+Please enter your username:
+carol
+Please enter your password:
+Test123!
+You have successfully logged in.
+Welcome, carol!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+8. View connections
+Enter your choice:
+7
+--- Pending Connection Requests ---
+You have no pending connection requests.
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+8. View connections
+Enter your choice:
+6

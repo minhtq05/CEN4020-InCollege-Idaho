@@ -1,0 +1,52 @@
+{
+  "id": "E5-05",
+  "title": "Mixed decisions retain only accepted connections",
+  "pending": [
+    "bob",
+    "carol",
+    "dave"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "1",
+        "2",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?=.*(?:bob|Bob Tester)).*accept",
+        "carol.*reject",
+        "dave.*accept"
+      ],
+      "forbid": [],
+      "pending": []
+    },
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "8",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections",
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Bob Tester",
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Dave Tester"
+      ],
+      "forbid": [
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Carol Tester"
+      ],
+      "network": [
+        "Bob Tester",
+        "Dave Tester"
+      ]
+    }
+  ]
+}

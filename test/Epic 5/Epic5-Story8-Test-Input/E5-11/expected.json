@@ -1,0 +1,25 @@
+{
+  "id": "E5-11",
+  "title": "EOF before decision leaves request unchanged",
+  "pending": [
+    "bob"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7"
+      ],
+      "require": [
+        "1[.)]?\\s*Accept",
+        "2[.)]?\\s*Reject"
+      ],
+      "forbid": [],
+      "pending": [
+        "bob"
+      ]
+    }
+  ]
+}

@@ -11,6 +11,8 @@
 
         DATA DIVISION.
         WORKING-STORAGE SECTION.
+        COPY "InCollege-Common.cpy".
+        COPY "InCollege-ProfileTable.cpy".
         01  WS-SEARCH-FULL-NAME         PIC X(100).
         01  WS-FOUND-IDX                PIC 9(2) VALUE 0.
         01  WS-MESSAGE                  PIC X(100).
@@ -42,6 +44,7 @@
                         UNTIL WS-IDX > WS-PROFILE-COUNT
                     IF FUNCTION TRIM(WS-PROF-USERNAME(WS-IDX)) NOT =
                        FUNCTION TRIM(WS-CURRENT-USERNAME)
+                        MOVE SPACES TO WS-TEMP-NAME
                         STRING FUNCTION TRIM(WS-PROF-FIRST-NAME(WS-IDX))
                                " "
                                FUNCTION TRIM(WS-PROF-LAST-NAME(WS-IDX))
@@ -59,6 +62,7 @@
             IF WS-FOUND-IDX > 0
                 MOVE "--------------------" TO WS-MESSAGE
                 CALL "WRITE-LINE" USING WS-MESSAGE
+                MOVE SPACES TO WS-MESSAGE
                 STRING "Profile of "
                        FUNCTION TRIM(WS-PROF-FIRST-NAME(WS-FOUND-IDX))
                        " "
@@ -68,13 +72,15 @@
                 END-STRING
                 CALL "WRITE-LINE" USING WS-MESSAGE
 
-                STRING "Title: "
-                       FUNCTION TRIM(WS-PROF-TITLE(WS-FOUND-IDX))
+                MOVE SPACES TO WS-MESSAGE
+                STRING "Graduation Year: "
+                       WS-PROF-GRAD-YEAR(WS-FOUND-IDX)
                        DELIMITED BY SIZE
                        INTO WS-MESSAGE
                 END-STRING
                 CALL "WRITE-LINE" USING WS-MESSAGE
 
+                MOVE SPACES TO WS-MESSAGE
                 STRING "Major: "
                        FUNCTION TRIM(WS-PROF-MAJOR(WS-FOUND-IDX))
                        DELIMITED BY SIZE
@@ -82,15 +88,17 @@
                 END-STRING
                 CALL "WRITE-LINE" USING WS-MESSAGE
 
+                MOVE SPACES TO WS-MESSAGE
                 STRING "University: "
-                       FUNCTION TRIM(WS-PROF-UNI(WS-FOUND-IDX))
+                       FUNCTION TRIM(WS-PROF-UNIVERSITY(WS-FOUND-IDX))
                        DELIMITED BY SIZE
                        INTO WS-MESSAGE
                 END-STRING
                 CALL "WRITE-LINE" USING WS-MESSAGE
 
+                MOVE SPACES TO WS-MESSAGE
                 STRING "About: "
-                       FUNCTION TRIM(WS-PROF-ABOUT(WS-FOUND-IDX))
+                       FUNCTION TRIM(WS-PROF-ABOUT-ME(WS-FOUND-IDX))
                        DELIMITED BY SIZE
                        INTO WS-MESSAGE
                 END-STRING
@@ -101,37 +109,26 @@
                 IF WS-PROF-EXP-COUNT(WS-FOUND-IDX) > 0
                     PERFORM VARYING WS-EXP-IDX FROM 1 BY 1
                             UNTIL WS-EXP-IDX > WS-PROF-EXP-COUNT(WS-FOUND-IDX)
+                        MOVE SPACES TO WS-MESSAGE
                         STRING "  - "
                                FUNCTION TRIM(
                                  WS-PROF-EXP-TITLE(WS-FOUND-IDX,
                                                    WS-EXP-IDX))
                                " at "
                                FUNCTION TRIM(
-                                 WS-PROF-EXP-COMP(WS-FOUND-IDX,
+                                 WS-PROF-EXP-COMPANY(WS-FOUND-IDX,
                                                   WS-EXP-IDX))
                                " ("
                                FUNCTION TRIM(
-                                 WS-PROF-EXP-START(WS-FOUND-IDX,
+                                 WS-PROF-EXP-DATES(WS-FOUND-IDX,
                                                    WS-EXP-IDX))
-                               " to "
-                               FUNCTION TRIM(
-                                 WS-PROF-EXP-END(WS-FOUND-IDX,
-                                                 WS-EXP-IDX))
                                ")"
                                DELIMITED BY SIZE
                                INTO WS-MESSAGE
                         END-STRING
                         CALL "WRITE-LINE" USING WS-MESSAGE
 
-                        STRING "    Location: "
-                               FUNCTION TRIM(
-                                 WS-PROF-EXP-LOC(WS-FOUND-IDX,
-                                                 WS-EXP-IDX))
-                               DELIMITED BY SIZE
-                               INTO WS-MESSAGE
-                        END-STRING
-                        CALL "WRITE-LINE" USING WS-MESSAGE
-
+                        MOVE SPACES TO WS-MESSAGE
                         STRING "    Description: "
                                FUNCTION TRIM(
                                  WS-PROF-EXP-DESC(WS-FOUND-IDX,
@@ -151,13 +148,14 @@
                 IF WS-PROF-EDU-COUNT(WS-FOUND-IDX) > 0
                     PERFORM VARYING WS-EDU-IDX FROM 1 BY 1
                             UNTIL WS-EDU-IDX > WS-PROF-EDU-COUNT(WS-FOUND-IDX)
+                        MOVE SPACES TO WS-MESSAGE
                         STRING "  - "
                                FUNCTION TRIM(
                                  WS-PROF-EDU-DEGREE(WS-FOUND-IDX,
                                                     WS-EDU-IDX))
                                ", "
                                FUNCTION TRIM(
-                                 WS-PROF-EDU-SCHOOL(WS-FOUND-IDX,
+                                 WS-PROF-EDU-UNIVERSITY(WS-FOUND-IDX,
                                                     WS-EDU-IDX))
                                " ("
                                FUNCTION TRIM(

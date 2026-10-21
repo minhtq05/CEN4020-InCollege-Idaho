@@ -1,0 +1,56 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+1
+Please enter your username:
+alice
+Please enter your password:
+Test123!
+You have successfully logged in.
+Welcome, alice!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+8. View connections
+Enter your choice:
+7
+--- Pending Connection Requests ---
+Request from: bob
+1. Accept
+2. Reject
+Enter your choice for bob:
+wrong
+Invalid choice, please try again.
+Request from: bob
+1. Accept
+2. Reject
+Enter your choice for bob:
+
+Invalid choice, please try again.
+Request from: bob
+1. Accept
+2. Reject
+Enter your choice for bob:
+3
+Invalid choice, please try again.
+Request from: bob
+1. Accept
+2. Reject
+Enter your choice for bob:
+1
+Connection request from bob accepted!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+8. View connections
+Enter your choice:
+6
