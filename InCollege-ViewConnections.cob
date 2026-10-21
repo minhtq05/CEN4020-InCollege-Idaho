@@ -15,15 +15,21 @@
 	   COPY "InCollege-ProfileTable.cpy".
 
 	   01  WS-MESSAGE                  PIC X(100).
+	   01  WS-LINE-TEXT                PIC X(100).
+	   01  WS-CHOICE                   PIC X(20).
 	   01  WS-REQUEST-IDX              PIC 9(2).
 	   01  WS-PROFILE-IDX              PIC 9(2).
 	   01  WS-CONNECTION-COUNT         PIC 9(2) VALUE 0.
 	   01  WS-CONNECTION-USERNAME      PIC X(20).
 	   01  WS-CONNECTION-NAME          PIC X(61).
 
-	   PROCEDURE DIVISION.
+	   LINKAGE SECTION.
+	   01  LS-LOGOUT-FLAG              PIC X.
+
+	   PROCEDURE DIVISION USING LS-LOGOUT-FLAG.
 	   VIEW-CONNECTIONS-START.
-		   MOVE "--- Your Connections ---" TO WS-MESSAGE
+		   MOVE 'N' TO LS-LOGOUT-FLAG
+		   MOVE "--- Your Network ---" TO WS-MESSAGE
 		   CALL "WRITE-LINE" USING WS-MESSAGE
 		   MOVE 0 TO WS-CONNECTION-COUNT
 
@@ -58,6 +64,30 @@
 		   IF WS-CONNECTION-COUNT = 0
 			   MOVE "You have no connections yet." TO WS-MESSAGE
 			   CALL "WRITE-LINE" USING WS-MESSAGE
+		   END-IF
+		   MOVE SPACES TO WS-CHOICE
+		   PERFORM UNTIL END-OF-INPUT OR
+				   FUNCTION TRIM(WS-CHOICE) = "1" OR
+				   FUNCTION TRIM(WS-CHOICE) = "2"
+			   MOVE "1: Return to menu" TO WS-MESSAGE
+			   CALL "WRITE-LINE" USING WS-MESSAGE
+			   MOVE "2: Log out" TO WS-MESSAGE
+			   CALL "WRITE-LINE" USING WS-MESSAGE
+			   MOVE "Enter your choice:" TO WS-MESSAGE
+			   CALL "WRITE-LINE" USING WS-MESSAGE
+			   CALL "READ-LINE" USING WS-LINE-TEXT
+			   IF NOT END-OF-INPUT
+				   MOVE WS-LINE-TEXT TO WS-CHOICE
+				   IF FUNCTION TRIM(WS-CHOICE) NOT = "1" AND
+					  FUNCTION TRIM(WS-CHOICE) NOT = "2"
+					   MOVE "Invalid choice, please try again."
+						   TO WS-MESSAGE
+					   CALL "WRITE-LINE" USING WS-MESSAGE
+				   END-IF
+			   END-IF
+		   END-PERFORM
+		   IF FUNCTION TRIM(WS-CHOICE) = "2"
+			   MOVE 'Y' TO LS-LOGOUT-FLAG
 		   END-IF
 		   GOBACK.
 

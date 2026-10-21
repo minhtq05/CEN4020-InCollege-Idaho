@@ -4,11 +4,11 @@ Create New Account
 Enter your choice:
 1
 Please enter your username:
-newstudent01
+jstudent
 Please enter your password:
-Str0ngPass!
+Passw0rd!
 You have successfully logged in.
-Welcome, newstudent01!
+Welcome, jstudent!
 1. Create/Edit My Profile
 2. View My Profile
 3. Search for a job
@@ -16,15 +16,12 @@ Welcome, newstudent01!
 5. Learn a New Skill
 6. Logout
 7. View pending requests
+8. View connections
 Enter your choice:
-7
-==== Pending Connection Requests ====
-From: jstudent
-1. Create/Edit My Profile
-2. View My Profile
-3. Search for a job
-4. Find someone you know
-5. Learn a New Skill
-6. Logout
-7. View pending requests
+8
+--- Your Network ---
+Username: newstudent01 | Name: Jane Smith
+1: Return to menu
+2: Log out
 Enter your choice:
+2

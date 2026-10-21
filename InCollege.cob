@@ -114,7 +114,12 @@
                        WHEN "7"
                            CALL "FREQ-VIEW-PENDING"
                        WHEN "8"
+                           MOVE 'N' TO WS-LOGOUT-FLAG
                            CALL "VIEW-CONNECTIONS"
+                               USING WS-LOGOUT-FLAG
+                           IF LOGOUT-REQUESTED
+                               MOVE 'Y' TO WS-PROGRAM-DONE
+                           END-IF
                        WHEN OTHER
                            MOVE "Invalid choice, please try again."
                                TO WS-MESSAGE
