@@ -1,0 +1,3 @@
+bob                 alice               ACCEPTED
+carol               alice               REJECTED
+dave                alice               ACCEPTED

@@ -1,0 +1,9 @@
+make[1]: Entering directory '/home/ubuntu/Work/CEN4020/CEN4020-InCollege-Idaho'
+cobc -x InCollege.cob InCollege-IO.cob InCollege-Account.cob InCollege-Profile.cob InCollege-ProfileEntries.cob InCollege-ProfileView.cob InCollege-UserSearch.cob InCollege-ViewConnections.cob InCollege-Skills.cob InCollege-PendingRequestFun.cob -o /tmp/epic5-build-et31l820/InCollege
+InCollege-PendingRequestTable.cpy:9: warning: line not terminated by a newline [-Wothers]
+InCollege-PendingRequestTable.cpy:9: warning: line not terminated by a newline [-Wothers]
+InCollege-PendingRequestTable.cpy:9: warning: line not terminated by a newline [-Wothers]
+InCollege-PendingRequestTable.cpy:9: warning: line not terminated by a newline [-Wothers]
+InCollege-PendingRequestTable.cpy:9: warning: line not terminated by a newline [-Wothers]
+InCollege-PendingRequestFun.cob:382: warning: line not terminated by a newline [-Wothers]
+make[1]: Leaving directory '/home/ubuntu/Work/CEN4020/CEN4020-InCollege-Idaho'

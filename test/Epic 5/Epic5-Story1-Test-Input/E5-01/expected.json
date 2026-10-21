@@ -1,0 +1,74 @@
+{
+  "id": "E5-01",
+  "title": "Accept one request; remove pending; reciprocal network after restart",
+  "pending": [
+    "bob"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?=.*(?:bob|Bob Tester)).*accept"
+      ],
+      "forbid": [],
+      "pending": []
+    },
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "8",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections",
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Bob Tester"
+      ],
+      "forbid": [],
+      "network": [
+        "Bob Tester"
+      ]
+    },
+    {
+      "input": [
+        "1",
+        "bob",
+        "Test123!",
+        "8",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections",
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Alice Tester"
+      ],
+      "forbid": [],
+      "network": [
+        "Alice Tester"
+      ]
+    },
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "6"
+      ],
+      "require": [
+        "No pending"
+      ],
+      "forbid": [],
+      "pending": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "E5-20",
+  "title": "Reject immediately at EOF persists",
+  "pending": [
+    "bob"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "2"
+      ],
+      "require": [
+        "(?=.*(?:bob|Bob Tester)).*reject"
+      ],
+      "forbid": [],
+      "pending": []
+    },
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "6"
+      ],
+      "require": [
+        "No pending"
+      ],
+      "forbid": [],
+      "pending": []
+    }
+  ]
+}

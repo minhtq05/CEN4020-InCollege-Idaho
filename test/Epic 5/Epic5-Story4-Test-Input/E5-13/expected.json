@@ -1,0 +1,46 @@
+{
+  "id": "E5-13",
+  "title": "EOF after first decision preserves remaining request",
+  "pending": [
+    "bob",
+    "carol"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "1"
+      ],
+      "require": [
+        "(?=.*(?:bob|Bob Tester)).*accept"
+      ],
+      "forbid": [],
+      "pending": [
+        "carol"
+      ]
+    },
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "8",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections",
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Bob Tester"
+      ],
+      "forbid": [
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Carol Tester"
+      ],
+      "network": [
+        "Bob Tester"
+      ]
+    }
+  ]
+}

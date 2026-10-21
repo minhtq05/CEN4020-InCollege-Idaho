@@ -1,0 +1,72 @@
+{
+  "id": "E5-03",
+  "title": "Reject one request; no connection after restart",
+  "pending": [
+    "bob"
+  ],
+  "runs": [
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "2",
+        "6"
+      ],
+      "require": [
+        "(?=.*(?:bob|Bob Tester)).*reject"
+      ],
+      "forbid": [],
+      "pending": []
+    },
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "8",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections"
+      ],
+      "forbid": [
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Bob Tester"
+      ],
+      "network": []
+    },
+    {
+      "input": [
+        "1",
+        "bob",
+        "Test123!",
+        "8",
+        "1",
+        "6"
+      ],
+      "require": [
+        "(?:Your|My|Established) Network|Your connections"
+      ],
+      "forbid": [
+        "(?:Connected (?:with|to):?\\s*|Username: \\w+ \\| Name: )Alice Tester"
+      ],
+      "network": []
+    },
+    {
+      "input": [
+        "1",
+        "alice",
+        "Test123!",
+        "7",
+        "6"
+      ],
+      "require": [
+        "No pending"
+      ],
+      "forbid": [],
+      "pending": []
+    }
+  ]
+}
