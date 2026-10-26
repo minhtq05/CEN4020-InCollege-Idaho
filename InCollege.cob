@@ -4,9 +4,9 @@
       *> feature is delegated to a subprogram (InCollege-IO,
       *> InCollege-Account, InCollege-Profile,
       *> InCollege-ProfileEntries, InCollege-ProfileView,
-      *> InCollege-Skills), sharing session state via the EXTERNAL
-      *> items in InCollege-Common.cpy. See README.md for the
-      *> module layout and build instructions (make/make run).
+      *> InCollege-Skills, InCollege-Jobs), sharing session state
+      *> via the EXTERNAL items in InCollege-Common.cpy. See
+      *> README.md for module layout and build instructions.
       *>*******************************************************
        >>SOURCE FORMAT FREE
        IDENTIFICATION DIVISION.
@@ -101,9 +101,7 @@
                        WHEN "2"
                            CALL "PROFILE-VIEW"
                        WHEN "3"
-                           MOVE "Job search/internship is under construction."
-                               TO WS-MESSAGE
-                           CALL "WRITE-LINE" USING WS-MESSAGE
+                           CALL "JOB-MENU"
                        WHEN "4"
                            CALL "USER-SEARCH"
                        WHEN "5"

@@ -18,10 +18,24 @@ Welcome, jstudent!
 7. View pending requests
 8. View connections
 Enter your choice:
-8
---- Your Network ---
-Username: newstudent01 | Name: Jane Smith
-1: Return to menu
-2: Log out
+3
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
 Enter your choice:
-2
+1
+Enter Job Title:
+Data Analyst Intern
+Enter Description (max 200 chars):
+Collect, clean, and visualize data
+Enter Employer Name:
+Amazon
+Enter Location:
+Tampa, FL
+Enter Salary (optional, enter 'NONE' to skip):
+70000
+Job posted successfully!
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+Enter your choice:

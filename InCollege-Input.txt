@@ -1,5 +1,10 @@
 1
 jstudent
 Passw0rd!
-8
-2
+3
+1
+Data Analyst Intern
+Collect, clean, and visualize data
+Amazon
+Tampa, FL
+70000
