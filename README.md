@@ -56,13 +56,15 @@ file is a monolith:
 | File | Contains |
 |---|---|
 | `InCollege.cob` | Main program: top-level and post-login menu orchestration only. |
-| `InCollege-IO.cob` | `WRITE-LINE` / `READ-LINE` — shared screen+file echo I/O. |
+| `InCollege-IO.cob` | `WRITE-LINE` / `READ-LINE` — shared screen+file echo I/O (plus 250-char `WRITE-LONG-LINE` / `READ-LONG-LINE`). |
 | `InCollege-Account.cob` | `ACCOUNT-LOAD` / `ACCOUNT-CREATE` / `ACCOUNT-LOGIN`. |
 | `InCollege-Profile.cob` | `PROFILE-LOAD` / `PROFILE-SAVE` / `PROFILE-EDIT`. |
 | `InCollege-ProfileEntries.cob` | `PROFILE-EXPERIENCE` / `PROFILE-EDUCATION` (repeatable entries). |
 | `InCollege-ProfileView.cob` | `PROFILE-VIEW`. |
 | `InCollege-UserSearch.cob` | `USER-SEARCH` — exact full-name lookup across saved profiles. |
 | `InCollege-Skills.cob` | `SKILL-MENU`. |
+| `InCollege-Jobs.cob` | `JOB-MENU` — job/internship menu and posting a job. |
+| `InCollege-SavedJobs.cob` | `SAVED-JOBS-MENU` — save, list, and unsave jobs. |
 | `InCollege-*.cpy` | Shared record layouts and `EXTERNAL` session/table data, included via `COPY` where more than one program needs the same shape. |
 
 ### Compile
@@ -158,6 +160,88 @@ Choose **4** after logging in and enter the person's full name as `First Last`. 
 uses an exact, case-sensitive comparison against other users' saved profile names and reports
 whether that person is part of the InCollege system.
 
+
+## InCollege (Epic #6: Job/Internship Postings)
+
+Choosing **3** ("Search for a job") after logging in opens the job menu:
+
+```
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+4. Saved Jobs
+```
+
+**2** prints "Browse Jobs/Internships is under construction." and **3** returns to the
+post-login menu.
+
+### Preparing input for posting a job
+
+After **1**, supply one line per prompt, in this order:
+
+| Prompt | Rules |
+|---|---|
+| Job Title | Required, max 50 characters |
+| Description | Required, max 200 characters |
+| Employer Name | Required, max 50 characters |
+| Location | Required, max 50 characters |
+| Salary | Optional, free text up to 20 characters (e.g. `$50,000/year`). `NONE` or a blank line means no salary. |
+
+A blank required field or an over-long value stops the post with a message naming the field
+(e.g. `Job Title is required. Job not posted.`) and returns to the job menu. That post reads
+nothing after the failing field, so any lines you prepared for the remaining prompts are read as
+job menu choices. On success the program prints `Job posted successfully!` followed by a
+`----------------------------------` separator.
+
+Example (log in, post a job, browse, go back, log out):
+
+```text
+1
+jstudent
+Passw0rd!
+3
+1
+Marketing Intern
+Help plan social media campaigns
+InCollege Media
+Orlando, FL
+$25/hour
+2
+3
+6
+```
+
+### Saving jobs
+
+**4** opens the saved-jobs menu (`1. Save a Job`, `2. View My Saved Jobs`, `3. Unsave a Job`,
+`4. Back to Job Menu`):
+
+- **Save a Job** lists every posted job as `ID. Title - Employer (Location)`, then reads one line:
+  the job ID to save. Unknown or non-numeric IDs print `Invalid job ID.`; saving the same job twice
+  prints `You have already saved this job.`
+- **View My Saved Jobs** lists the logged-in user's saved jobs in the same format, or
+  `You have no saved jobs.`
+- **Unsave a Job** lists your saved jobs, then reads the ID to remove. If you have no saved jobs it
+  prints the message and does not read an ID.
+
+Example input after logging in: `3`, `4`, `1`, `2` (save job 2), `2` (view), `4`, `3`, `6`.
+
+### Job persistence and output
+
+- `InCollege-JobList.txt` holds one fixed-width line per job: a 3-digit sequential ID, the
+  poster's username (20 chars), then Title (50), Description (200), Employer (50), Location (50),
+  and Salary (20). Jobs are read back in on every visit to the job menu, so they survive restarts.
+  The file holds up to 20 jobs. Delete it to start with no jobs.
+- `InCollege-SavedJobs.txt` holds one line per saved job: username (20 chars) + job ID (3 digits).
+  Each user only sees their own saved jobs, and the list is still there at the next login.
+- As with every feature, prompts, echoed input, and results appear on screen and identically in
+  `InCollege-Output.txt`.
+
+The committed [`InCollege-Input.txt`](InCollege-Input.txt) posts a job, browses, saves jobs 1 and
+3, unsaves job 1, and views the saved list. The matching output is in
+[`InCollege-Output.txt`](InCollege-Output.txt). Running it again appends another job to
+`InCollege-JobList.txt`.
 
 ## File-based connection request testing
 

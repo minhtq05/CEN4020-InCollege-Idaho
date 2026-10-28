@@ -9,7 +9,9 @@ SOURCES := InCollege.cob \
            InCollege-UserSearch.cob \
            InCollege-ViewConnections.cob \
            InCollege-Skills.cob \
-           InCollege-PendingRequestFun.cob
+           InCollege-PendingRequestFun.cob \
+           InCollege-Jobs.cob \
+           InCollege-SavedJobs.cob
 COPYBOOKS := InCollege-Common.cpy \
              InCollege-AccountRecord.cpy \
              InCollege-AccountTable.cpy \
@@ -17,7 +19,8 @@ COPYBOOKS := InCollege-Common.cpy \
              InCollege-ProfileTable.cpy \
              InCollege-ProfileFindRow.cpy \
              InCollege-PendingRequest.cpy \
-             InCollege-PendingRequestTable.cpy
+             InCollege-PendingRequestTable.cpy \
+             InCollege-JobTable.cpy
 
 .PHONY: all run test clean
 
