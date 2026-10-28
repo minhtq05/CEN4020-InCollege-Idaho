@@ -1,0 +1,123 @@
+Welcome to InCollege!
+Log In
+Create New Account
+Enter your choice:
+1
+Please enter your username:
+jstudent
+Please enter your password:
+Passw0rd!
+You have successfully logged in.
+Welcome, jstudent!
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+8. View connections
+Enter your choice:
+3
+--- Job Search/Internship Menu ---
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+4. Saved Jobs
+Enter your choice:
+1
+--- Post a New Job/Internship ---
+Enter Job Title:
+Marketing Intern
+Enter Description (max 200 chars):
+Help plan social media campaigns and write weekly analytics reports for the marketing team
+Enter Employer Name:
+InCollege Media
+Enter Location:
+Orlando, FL
+Enter Salary (optional, enter 'NONE' to skip):
+$25/hour
+Job posted successfully!
+----------------------------------
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+4. Saved Jobs
+Enter your choice:
+2
+Browse Jobs/Internships is under construction.
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+4. Saved Jobs
+Enter your choice:
+4
+--- Saved Jobs ---
+1. Save a Job
+2. View My Saved Jobs
+3. Unsave a Job
+4. Back to Job Menu
+Enter your choice:
+1
+--- Available Jobs ---
+1. Software Engineering Intern - Google (Remote)
+2. Data Analyst Intern - Amazon (Tampa, FL)
+3. Marketing Intern - InCollege Media (Orlando, FL)
+Enter the ID of the job to save:
+1
+Job saved successfully!
+1. Save a Job
+2. View My Saved Jobs
+3. Unsave a Job
+4. Back to Job Menu
+Enter your choice:
+1
+--- Available Jobs ---
+1. Software Engineering Intern - Google (Remote)
+2. Data Analyst Intern - Amazon (Tampa, FL)
+3. Marketing Intern - InCollege Media (Orlando, FL)
+Enter the ID of the job to save:
+3
+Job saved successfully!
+1. Save a Job
+2. View My Saved Jobs
+3. Unsave a Job
+4. Back to Job Menu
+Enter your choice:
+3
+--- My Saved Jobs ---
+1. Software Engineering Intern - Google (Remote)
+3. Marketing Intern - InCollege Media (Orlando, FL)
+Enter the ID of the job to unsave:
+1
+Job removed from saved jobs.
+1. Save a Job
+2. View My Saved Jobs
+3. Unsave a Job
+4. Back to Job Menu
+Enter your choice:
+2
+--- My Saved Jobs ---
+3. Marketing Intern - InCollege Media (Orlando, FL)
+1. Save a Job
+2. View My Saved Jobs
+3. Unsave a Job
+4. Back to Job Menu
+Enter your choice:
+4
+1. Post a Job/Internship
+2. Browse Jobs/Internships
+3. Back to Main Menu
+4. Saved Jobs
+Enter your choice:
+3
+1. Create/Edit My Profile
+2. View My Profile
+3. Search for a job
+4. Find someone you know
+5. Learn a New Skill
+6. Logout
+7. View pending requests
+8. View connections
+Enter your choice:
+6

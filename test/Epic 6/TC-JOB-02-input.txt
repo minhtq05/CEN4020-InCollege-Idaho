@@ -1,0 +1,12 @@
+1
+jstudent
+Passw0rd!
+3
+1
+Cloud Support Intern
+Assist DevOps team with monitoring and pipeline scripts
+Microsoft
+Redmond, WA
+$35/hour
+3
+6
