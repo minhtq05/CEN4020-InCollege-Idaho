@@ -10,7 +10,8 @@ SOURCES := InCollege.cob \
            InCollege-ViewConnections.cob \
            InCollege-Skills.cob \
            InCollege-PendingRequestFun.cob \
-           InCollege-Jobs.cob
+           InCollege-Jobs.cob \
+           InCollege-SavedJobs.cob
 COPYBOOKS := InCollege-Common.cpy \
              InCollege-AccountRecord.cpy \
              InCollege-AccountTable.cpy \

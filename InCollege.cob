@@ -4,9 +4,9 @@
       *> feature is delegated to a subprogram (InCollege-IO,
       *> InCollege-Account, InCollege-Profile,
       *> InCollege-ProfileEntries, InCollege-ProfileView,
-      *> InCollege-Skills), sharing session state via the EXTERNAL
-      *> items in InCollege-Common.cpy. See README.md for the
-      *> module layout and build instructions (make/make run).
+      *> InCollege-Skills, InCollege-Jobs), sharing session state
+      *> via the EXTERNAL items in InCollege-Common.cpy. See
+      *> README.md for module layout and build instructions.
       *>*******************************************************
        >>SOURCE FORMAT FREE
        IDENTIFICATION DIVISION.
@@ -34,7 +34,6 @@
            CALL "ACCOUNT-LOAD".
            CALL "PROFILE-LOAD".
            CALL "FREQ-LOAD".
-           CALL "JOB-LOAD".
            PERFORM UNTIL PROGRAM-DONE OR END-OF-INPUT
                PERFORM TOP-LEVEL-MENU
            END-PERFORM.
