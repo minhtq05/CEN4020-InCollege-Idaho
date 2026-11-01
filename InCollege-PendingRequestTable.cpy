@@ -1,4 +1,4 @@
-   *> Shared working-storage structure for in-memory request table
+      *> Shared working-storage structure for in-memory request table
        
         01 WS-FREQ-COUNT                PIC 9(2) EXTERNAL. 
               

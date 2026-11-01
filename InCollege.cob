@@ -34,6 +34,7 @@
            CALL "ACCOUNT-LOAD".
            CALL "PROFILE-LOAD".
            CALL "FREQ-LOAD".
+           CALL "JOB-LOAD".
            PERFORM UNTIL PROGRAM-DONE OR END-OF-INPUT
                PERFORM TOP-LEVEL-MENU
            END-PERFORM.
@@ -101,9 +102,7 @@
                        WHEN "2"
                            CALL "PROFILE-VIEW"
                        WHEN "3"
-                           MOVE "Job search/internship is under construction."
-                               TO WS-MESSAGE
-                           CALL "WRITE-LINE" USING WS-MESSAGE
+                           CALL "JOB-MENU"
                        WHEN "4"
                            CALL "USER-SEARCH"
                        WHEN "5"

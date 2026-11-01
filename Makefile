@@ -9,7 +9,8 @@ SOURCES := InCollege.cob \
            InCollege-UserSearch.cob \
            InCollege-ViewConnections.cob \
            InCollege-Skills.cob \
-           InCollege-PendingRequestFun.cob
+           InCollege-PendingRequestFun.cob \
+           InCollege-Jobs.cob
 COPYBOOKS := InCollege-Common.cpy \
              InCollege-AccountRecord.cpy \
              InCollege-AccountTable.cpy \
@@ -17,7 +18,9 @@ COPYBOOKS := InCollege-Common.cpy \
              InCollege-ProfileTable.cpy \
              InCollege-ProfileFindRow.cpy \
              InCollege-PendingRequest.cpy \
-             InCollege-PendingRequestTable.cpy
+             InCollege-PendingRequestTable.cpy \
+             InCollege-ApplicationRecord.cpy \
+             InCollege-JobTable.cpy
 
 .PHONY: all run test clean
 
@@ -30,7 +33,7 @@ run: all
 	./$(TARGET)
 
 test:
-	COBC="$(COBC)" python3 test/test_connection_input.py
+	COBC="$(COBC)" python3 -m unittest discover -s test -p 'test_*.py' -v
 
 clean:
 	rm -f $(TARGET) *.o
