@@ -77,8 +77,9 @@ class ConnectionFileInputTests(unittest.TestCase):
         self.assertIn("  - Intern at Example Company (2025-2026)\n", output)
         self.assertIn("  - BS, Test University (2023-2027)\n", output)
         self.assertEqual(self.saved_requests(), request())
-        output = self.run_input(["7", "6"], username="bob")
-        self.assertIn("Pending connection requests:\n  From: alice\n", output)
+        output = self.run_input(["7", "1", "6"], username="bob")
+        self.assertIn("Request from: alice\n", output)
+        self.assertIn("Connection request from alice accepted!\n", output)
 
     def test_back_does_not_send(self):
         self.run_input(["4", "Bob Tester", "2", "6"])
@@ -104,10 +105,11 @@ class ConnectionFileInputTests(unittest.TestCase):
     def test_incoming_request(self):
         incoming = request("bob", "alice")
         (self.directory / "InCollege-Requests.txt").write_text(incoming)
-        output = self.run_input(["4", "Bob Tester", "1", "7", "6"])
+        output = self.run_input(["4", "Bob Tester", "1", "7", "2", "6"])
         self.assertIn("This user already sent you a request. See option 7.", output)
-        self.assertIn("  From: bob\n", output)
-        self.assertEqual(self.saved_requests(), incoming)
+        self.assertIn("Request from: bob\n", output)
+        self.assertIn("Connection request from bob rejected!\n", output)
+        self.assertEqual(self.saved_requests(), request("bob", "alice", "REJECTED"))
 
     def test_eof_at_each_connection_prompt(self):
         for lines in (["4"], ["4", "Bob Tester"], ["4", "Bob Tester", "invalid"]):

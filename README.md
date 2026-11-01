@@ -285,3 +285,15 @@ Standard input is closed and each run has a timeout, so keyboard input or an EOF
 fails the test. Coverage includes sending and reloading pending requests, going back,
 invalid/blank choices, duplicate and incoming requests, repeated searches, and EOF at
 each connection prompt. Every run also checks that screen output matches the output file.
+
+## InCollege (Epic #7: Jobs and internships)
+
+After logging in, choose **3** to browse all available jobs and internships. Each numbered
+summary shows the title, employer, and location. Select a number to view the description,
+optional salary, and the application action; enter **0** from the listing screen to return
+to the logged-in menu.
+
+Applications are recorded in `InCollege-Applications.txt` as a username and stable job ID.
+They are loaded on later runs, so an application persists and the same user cannot apply to
+the same listing twice. `make test` covers browsing, full details, persistence, duplicate
+protection, invalid choices, EOF behavior, and the earlier connection workflows.
