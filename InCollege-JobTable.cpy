@@ -13,9 +13,3 @@
                10  WS-JOB-EMPLOYER     PIC X(50).
                10  WS-JOB-LOCATION     PIC X(50).
                 10  WS-JOB-SALARY       PIC X(20).
-
-       01  WS-APPLICATION-COUNT        PIC 9(3) EXTERNAL.
-       01  WS-APPLICATION-TABLE        EXTERNAL.
-           05  WS-APPLICATION-ENTRY OCCURS 100 TIMES.
-               10  WS-APPLICATION-USERNAME PIC X(20).
-               10  WS-APPLICATION-JOB-ID   PIC 9(3).

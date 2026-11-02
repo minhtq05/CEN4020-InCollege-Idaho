@@ -63,7 +63,9 @@ file is a monolith:
 | `InCollege-ProfileView.cob` | `PROFILE-VIEW`. |
 | `InCollege-UserSearch.cob` | `USER-SEARCH` — exact full-name lookup across saved profiles. |
 | `InCollege-Skills.cob` | `SKILL-MENU`. |
-| `InCollege-Jobs.cob` | `JOB-MENU` — job/internship menu and posting a job. |
+| `InCollege-Jobs.cob` | `JOB-MENU` — job/internship menu, loading the job list, and posting a job. |
+| `InCollege-ApplyJob.cob` | `BROWSE-JOBS` — list all jobs, show one job's full details, and apply for it. |
+| `InCollege-ViewApplications.cob` | `VIEW-APPLICATIONS` — the Job Application Summary Report for the logged-in user. |
 | `InCollege-SavedJobs.cob` | `SAVED-JOBS-MENU` — save, list, and unsave jobs. |
 | `InCollege-*.cpy` | Shared record layouts and `EXTERNAL` session/table data, included via `COPY` where more than one program needs the same shape. |
 
@@ -169,12 +171,13 @@ Choosing **3** ("Search for a job") after logging in opens the job menu:
 --- Job Search/Internship Menu ---
 1. Post a Job/Internship
 2. Browse Jobs/Internships
-3. Back to Main Menu
+3. View My Applications
 4. Saved Jobs
+5. Back to Main Menu
 ```
 
-**2** prints "Browse Jobs/Internships is under construction." and **3** returns to the
-post-login menu.
+**2** and **3** are the Epic #7 features described below, and **5** returns to the post-login
+menu.
 
 ### Preparing input for posting a job
 
@@ -194,7 +197,7 @@ nothing after the failing field, so any lines you prepared for the remaining pro
 job menu choices. On success the program prints `Job posted successfully!` followed by a
 `----------------------------------` separator.
 
-Example (log in, post a job, browse, go back, log out):
+Example (log in, post a job, go back to the main menu, log out):
 
 ```text
 1
@@ -207,8 +210,7 @@ Help plan social media campaigns
 InCollege Media
 Orlando, FL
 $25/hour
-2
-3
+5
 6
 ```
 
@@ -225,7 +227,7 @@ $25/hour
 - **Unsave a Job** lists your saved jobs, then reads the ID to remove. If you have no saved jobs it
   prints the message and does not read an ID.
 
-Example input after logging in: `3`, `4`, `1`, `2` (save job 2), `2` (view), `4`, `3`, `6`.
+Example input after logging in: `3`, `4`, `1`, `2` (save job 2), `2` (view), `4`, `5`, `6`.
 
 ### Job persistence and output
 
@@ -237,11 +239,6 @@ Example input after logging in: `3`, `4`, `1`, `2` (save job 2), `2` (view), `4`
   Each user only sees their own saved jobs, and the list is still there at the next login.
 - As with every feature, prompts, echoed input, and results appear on screen and identically in
   `InCollege-Output.txt`.
-
-The committed [`InCollege-Input.txt`](InCollege-Input.txt) posts a job, browses, saves jobs 1 and
-3, unsaves job 1, and views the saved list. The matching output is in
-[`InCollege-Output.txt`](InCollege-Output.txt). Running it again appends another job to
-`InCollege-JobList.txt`.
 
 ## File-based connection request testing
 
@@ -286,14 +283,79 @@ fails the test. Coverage includes sending and reloading pending requests, going 
 invalid/blank choices, duplicate and incoming requests, repeated searches, and EOF at
 each connection prompt. Every run also checks that screen output matches the output file.
 
-## InCollege (Epic #7: Jobs and internships)
+## InCollege (Epic #7: Browse, Apply, and Application Report)
 
-After logging in, choose **3** to browse all available jobs and internships. Each numbered
-summary shows the title, employer, and location. Select a number to view the description,
-optional salary, and the application action; enter **0** from the listing screen to return
-to the logged-in menu.
+After logging in, choose **3** ("Search for a job") to open the job menu (see Epic #6 above),
+then:
 
-Applications are recorded in `InCollege-Applications.txt` as a username and stable job ID.
-They are loaded on later runs, so an application persists and the same user cannot apply to
-the same listing twice. `make test` covers browsing, full details, persistence, duplicate
-protection, invalid choices, EOF behavior, and the earlier connection workflows.
+- **2. Browse Jobs/Internships** lists every posted job, one per line, as
+  `N. Title at Employer (Location)`, where `N` is the job number. It then reads one line: a job
+  number to view, or `0` to go back to the job menu. An unknown or non-numeric number prints
+  `Invalid job number.` and shows the list again. With no jobs posted it prints
+  `There are no jobs available.` and returns to the job menu without reading a line.
+- **Job details** show Title, Description, Employer, Location, and Salary (left out when the job
+  has none), then `1. Apply for this Job` / `2. Back to Job List`. Both choices return to the job
+  list. Applying prints `Your application for <Title> at <Employer> has been submitted.`;
+  applying again for the same job prints `You have already applied for this job.`
+- **3. View My Applications** prints the Job Application Summary Report for the logged-in user,
+  then returns to the job menu:
+
+```
+--- Your Job Applications ---
+Application Summary for jstudent
+------------------------------
+Job ID: 1
+Job Title: Software Engineering Intern
+Employer: Google
+Location: Remote
+---
+Job ID: 2
+Job Title: Data Analyst Intern
+Employer: Amazon
+Location: Tampa, FL
+------------------------------
+Total Applications: 2
+------------------------------
+```
+
+With no applications, the report prints `You have not applied for any jobs yet.` in place of the
+entries and `Total Applications: 0`.
+
+### Preparing input for browsing, applying, and the report
+
+Put one line per prompt. For example, after the three login lines (`1`, username, password):
+
+| Line | Meaning |
+|---|---|
+| `3` | Post-login menu: Search for a job |
+| `2` | Job menu: Browse Jobs/Internships |
+| `1` | Job list: view job number 1 |
+| `1` | Job details: Apply for this Job (back at the job list afterwards) |
+| `0` | Job list: back to the job menu |
+| `3` | Job menu: View My Applications (the report) |
+| `5` | Job menu: Back to Main Menu |
+| `6` | Post-login menu: Logout |
+
+End of file at any prompt ends the program cleanly. It never records an application unless
+the program has read a `1` at the job details prompt.
+
+### Application persistence and output
+
+- `InCollege-Applications.txt` holds one line per application: username (20 chars) + job ID
+  (3 digits). New applications are appended, so they persist across restarts. The report lists
+  only the logged-in user's applications, skipping any job that is no longer in
+  `InCollege-JobList.txt`. Delete the file to start with no applications.
+- The job list, job details, confirmations, and the report are written to the screen and,
+  identically, to `InCollege-Output.txt`.
+
+The committed [`InCollege-Input.txt`](InCollege-Input.txt) logs in as `jstudent`, views the
+(empty) report, applies for jobs 1 and 2, opens job 3 without applying, and views the report
+again. The matching output is in [`InCollege-Output.txt`](InCollege-Output.txt), produced by
+running it with the committed data files and no `InCollege-Applications.txt`. A second run shows
+`You have already applied for this job.` instead, so delete `InCollege-Applications.txt`
+to reproduce the committed output.
+
+`make test` covers the job menu, browsing empty, single, and multi-job lists, full details with
+and without a salary, applying and duplicate protection across restarts, invalid job numbers
+and choices, EOF at each prompt, and the report with zero, one, and several applications
+(showing only the logged-in user's).

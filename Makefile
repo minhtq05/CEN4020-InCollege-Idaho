@@ -11,6 +11,8 @@ SOURCES := InCollege.cob \
            InCollege-Skills.cob \
            InCollege-PendingRequestFun.cob \
            InCollege-Jobs.cob \
+           InCollege-ApplyJob.cob \
+           InCollege-ViewApplications.cob \
            InCollege-SavedJobs.cob
 COPYBOOKS := InCollege-Common.cpy \
              InCollege-AccountRecord.cpy \
