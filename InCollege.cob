@@ -4,7 +4,8 @@
       *> feature is delegated to a subprogram (InCollege-IO,
       *> InCollege-Account, InCollege-Profile,
       *> InCollege-ProfileEntries, InCollege-ProfileView,
-      *> InCollege-Skills, InCollege-Jobs), sharing session state
+      *> InCollege-Skills, InCollege-Jobs, InCollege-ApplyJob,
+      *> InCollege-ViewApplications, InCollege-SavedJobs), sharing session state
       *> via the EXTERNAL items in InCollege-Common.cpy. See
       *> README.md for module layout and build instructions.
       *>*******************************************************
