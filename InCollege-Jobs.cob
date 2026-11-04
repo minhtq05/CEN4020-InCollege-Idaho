@@ -2,7 +2,8 @@
       *> InCollege-Jobs.cob
       *> Job and internship menu: post a job (saved to
       *> InCollege-JobList.txt with a sequential ID and the
-      *> poster's username), browse (under construction), and the
+      *> poster's username), browse and apply (BROWSE-JOBS), the
+      *> application report (VIEW-APPLICATIONS), and the
       *> saved-jobs submenu (SAVED-JOBS-MENU).
       *>*******************************************************
        >>SOURCE FORMAT FREE
@@ -58,16 +59,18 @@
        JOB-MENU-START.
            PERFORM JOB-LOAD.
            MOVE 'N' TO WS-JOB-MENU-DONE.
-           MOVE "--- Job Search/Internship Menu ---" TO WS-MESSAGE.
-           CALL "WRITE-LINE" USING WS-MESSAGE.
            PERFORM UNTIL JOB-MENU-DONE OR END-OF-INPUT
+               MOVE "--- Job Search/Internship Menu ---" TO WS-MESSAGE
+               CALL "WRITE-LINE" USING WS-MESSAGE
                MOVE "1. Post a Job/Internship" TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
                MOVE "2. Browse Jobs/Internships" TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
-               MOVE "3. Back to Main Menu" TO WS-MESSAGE
+               MOVE "3. View My Applications" TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
                MOVE "4. Saved Jobs" TO WS-MESSAGE
+               CALL "WRITE-LINE" USING WS-MESSAGE
+               MOVE "5. Back to Main Menu" TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
                MOVE "Enter your choice:" TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
@@ -78,13 +81,13 @@
                        WHEN "1"
                            PERFORM POST-JOB
                        WHEN "2"
-                           MOVE "Browse Jobs/Internships is under construction."
-                               TO WS-MESSAGE
-                           CALL "WRITE-LINE" USING WS-MESSAGE
+                           CALL "BROWSE-JOBS"
                        WHEN "3"
-                           MOVE 'Y' TO WS-JOB-MENU-DONE
+                           CALL "VIEW-APPLICATIONS"
                        WHEN "4"
                            CALL "SAVED-JOBS-MENU"
+                       WHEN "5"
+                           MOVE 'Y' TO WS-JOB-MENU-DONE
                        WHEN OTHER
                            MOVE "Invalid choice, please try again."
                                TO WS-MESSAGE

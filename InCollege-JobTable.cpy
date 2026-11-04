@@ -12,4 +12,4 @@
                10  WS-JOB-DESCRIPTION  PIC X(200).
                10  WS-JOB-EMPLOYER     PIC X(50).
                10  WS-JOB-LOCATION     PIC X(50).
-               10  WS-JOB-SALARY       PIC X(20).
+                10  WS-JOB-SALARY       PIC X(20).
