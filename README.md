@@ -67,6 +67,7 @@ file is a monolith:
 | `InCollege-ApplyJob.cob` | `BROWSE-JOBS` — list all jobs, show one job's full details, and apply for it. |
 | `InCollege-ViewApplications.cob` | `VIEW-APPLICATIONS` — the Job Application Summary Report for the logged-in user. |
 | `InCollege-SavedJobs.cob` | `SAVED-JOBS-MENU` — save, list, and unsave jobs. |
+| `InCollege-Messages.cob` | `MESSAGE-MENU` / `SEND-MESSAGE` — connection-only private message sending. |
 | `InCollege-*.cpy` | Shared record layouts and `EXTERNAL` session/table data, included via `COPY` where more than one program needs the same shape. |
 
 ### Compile
@@ -239,6 +240,22 @@ Example input after logging in: `3`, `4`, `1`, `2` (save job 2), `2` (view), `4`
   Each user only sees their own saved jobs, and the list is still there at the next login.
 - As with every feature, prompts, echoed input, and results appear on screen and identically in
   `InCollege-Output.txt`.
+
+## InCollege (Epic #8: Private Messaging, Part 1)
+
+Choose **9** ("Messages") after logging in. The messaging menu provides **1. Send a New
+Message**, **2. View My Messages**, and **3. Back to Main Menu**. Viewing messages is reserved
+for the next epic and currently displays an under-construction message.
+
+To send, provide the recipient's username followed by one line of free-form message content (up
+to 200 characters). The recipient must be connected to the logged-in user through an accepted
+connection request; non-existent, pending, rejected, and otherwise unconnected users all produce
+`You can only message users you are connected with.` without reading a message-content line.
+
+Sent messages are appended to `InCollege-Messages.txt`. Each fixed-width record contains the
+sender username, recipient username, a 21-character COBOL `CURRENT-DATE` timestamp, and the
+200-character content. Inputs continue to come from `InCollege-Input.txt`, while prompts, echoed
+input, and results are identically displayed and written to `InCollege-Output.txt`.
 
 ## File-based connection request testing
 

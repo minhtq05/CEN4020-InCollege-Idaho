@@ -91,6 +91,8 @@
                CALL "WRITE-LINE" USING WS-MESSAGE
                MOVE "8. View connections" TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
+               MOVE "9. Messages" TO WS-MESSAGE
+               CALL "WRITE-LINE" USING WS-MESSAGE
                MOVE "Enter your choice:" TO WS-MESSAGE
                CALL "WRITE-LINE" USING WS-MESSAGE
                CALL "READ-LINE" USING WS-LINE-TEXT
@@ -119,6 +121,8 @@
                            IF LOGOUT-REQUESTED
                                MOVE 'Y' TO WS-PROGRAM-DONE
                            END-IF
+                       WHEN "9"
+                           CALL "MESSAGE-MENU"
                        WHEN OTHER
                            MOVE "Invalid choice, please try again."
                                TO WS-MESSAGE
