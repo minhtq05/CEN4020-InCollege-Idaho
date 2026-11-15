@@ -13,7 +13,8 @@ SOURCES := InCollege.cob \
            InCollege-Jobs.cob \
            InCollege-ApplyJob.cob \
            InCollege-ViewApplications.cob \
-           InCollege-SavedJobs.cob
+           InCollege-SavedJobs.cob \
+           InCollege-Messages.cob
 COPYBOOKS := InCollege-Common.cpy \
              InCollege-AccountRecord.cpy \
              InCollege-AccountTable.cpy \
@@ -23,7 +24,8 @@ COPYBOOKS := InCollege-Common.cpy \
              InCollege-PendingRequest.cpy \
              InCollege-PendingRequestTable.cpy \
              InCollege-ApplicationRecord.cpy \
-             InCollege-JobTable.cpy
+             InCollege-JobTable.cpy \
+             InCollege-MessageRecord.cpy
 
 .PHONY: all run test clean
 
