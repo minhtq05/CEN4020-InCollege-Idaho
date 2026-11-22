@@ -1,7 +1,7 @@
-      *>*******************************************************
-      *> Epic #8 private messaging menu and message sender.
-      *> Messages are limited to accepted connections and are
-      *> appended to InCollege-Messages.txt for later retrieval.
+*>*******************************************************
+      *> Epic #8 & #9 private messaging menu, sender, and viewer.
+      *> Messages are limited to accepted connections, persisted in
+      *> InCollege-Messages.txt, and filtered by recipient on view.
       *>*******************************************************
        >>SOURCE FORMAT FREE
        IDENTIFICATION DIVISION.
@@ -38,9 +38,7 @@
                        WHEN "1"
                            CALL "SEND-MESSAGE"
                        WHEN "2"
-                           MOVE "View My Messages is under construction."
-                               TO WS-MESSAGE
-                           CALL "WRITE-LINE" USING WS-MESSAGE
+                           CALL "VIEW-MESSAGES"
                        WHEN "3"
                            MOVE 'Y' TO WS-BACK-FLAG
                        WHEN OTHER
@@ -176,3 +174,111 @@
                CLOSE MESSAGE-FILE
            END-IF.
        END PROGRAM SEND-MESSAGE.
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. VIEW-MESSAGES.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT MESSAGE-FILE ASSIGN TO "InCollege-Messages.txt"
+               ORGANIZATION IS LINE SEQUENTIAL
+               FILE STATUS IS WS-MESSAGE-FILE-STATUS.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD  MESSAGE-FILE.
+       COPY "InCollege-MessageRecord.cpy".
+
+       WORKING-STORAGE SECTION.
+       COPY "InCollege-Common.cpy".
+
+       01  WS-MESSAGE-FILE-STATUS      PIC X(2).
+       01  WS-MESSAGE-EOF              PIC X VALUE 'N'.
+           88  END-OF-MESSAGES                 VALUE 'Y'.
+       01  WS-MSG-FOUND-COUNT          PIC 9(4) VALUE 0.
+       01  WS-MESSAGE                  PIC X(100).
+       01  WS-LONG-MESSAGE             PIC X(250).
+       01  WS-FORMATTED-TIME           PIC X(25).
+
+       PROCEDURE DIVISION.
+       VIEW-MESSAGES-START.
+           MOVE "--- Your Messages ---" TO WS-MESSAGE
+           CALL "WRITE-LINE" USING WS-MESSAGE
+
+           MOVE 'N' TO WS-MESSAGE-EOF
+           MOVE 0 TO WS-MSG-FOUND-COUNT
+
+           OPEN INPUT MESSAGE-FILE
+           IF WS-MESSAGE-FILE-STATUS = "00"
+               PERFORM UNTIL END-OF-MESSAGES
+                   READ MESSAGE-FILE
+                       AT END
+                           MOVE 'Y' TO WS-MESSAGE-EOF
+                       NOT AT END
+                           IF FUNCTION TRIM(MSG-REC-RECIPIENT) =
+                              FUNCTION TRIM(WS-CURRENT-USERNAME)
+                               IF WS-MSG-FOUND-COUNT > 0
+                                   MOVE "---" TO WS-MESSAGE
+                                   CALL "WRITE-LINE" USING WS-MESSAGE
+                               END-IF
+                               ADD 1 TO WS-MSG-FOUND-COUNT
+                               PERFORM DISPLAY-SINGLE-MESSAGE
+                           END-IF
+                   END-READ
+               END-PERFORM
+               CLOSE MESSAGE-FILE
+           END-IF
+
+           IF WS-MSG-FOUND-COUNT = 0
+               MOVE "You have no messages at this time." TO WS-MESSAGE
+               CALL "WRITE-LINE" USING WS-MESSAGE
+           END-IF
+
+           MOVE "---------------------" TO WS-MESSAGE
+           CALL "WRITE-LINE" USING WS-MESSAGE
+           GOBACK.
+
+       DISPLAY-SINGLE-MESSAGE.
+           MOVE SPACES TO WS-MESSAGE
+           STRING "From: " DELIMITED BY SIZE
+                  FUNCTION TRIM(MSG-REC-SENDER) DELIMITED BY SIZE
+                  INTO WS-MESSAGE
+           END-STRING
+           CALL "WRITE-LINE" USING WS-MESSAGE
+
+           MOVE SPACES TO WS-LONG-MESSAGE
+           STRING "Message: " DELIMITED BY SIZE
+                  FUNCTION TRIM(MSG-REC-CONTENT) DELIMITED BY SIZE
+                  INTO WS-LONG-MESSAGE
+           END-STRING
+           CALL "WRITE-LONG-LINE" USING WS-LONG-MESSAGE
+
+           IF FUNCTION TRIM(MSG-REC-TIMESTAMP) NOT = SPACES
+               PERFORM FORMAT-TIMESTAMP
+               MOVE SPACES TO WS-MESSAGE
+               STRING "Sent: " DELIMITED BY SIZE
+                      FUNCTION TRIM(WS-FORMATTED-TIME) DELIMITED BY SIZE
+                      INTO WS-MESSAGE
+               END-STRING
+               CALL "WRITE-LINE" USING WS-MESSAGE
+           END-IF.
+
+       FORMAT-TIMESTAMP.
+           MOVE SPACES TO WS-FORMATTED-TIME
+           IF MSG-REC-TIMESTAMP(1:12) IS NUMERIC
+               STRING MSG-REC-TIMESTAMP(1:4) DELIMITED BY SIZE
+                      "-" DELIMITED BY SIZE
+                      MSG-REC-TIMESTAMP(5:2) DELIMITED BY SIZE
+                      "-" DELIMITED BY SIZE
+                      MSG-REC-TIMESTAMP(7:2) DELIMITED BY SIZE
+                      " " DELIMITED BY SIZE
+                      MSG-REC-TIMESTAMP(9:2) DELIMITED BY SIZE
+                      ":" DELIMITED BY SIZE
+                      MSG-REC-TIMESTAMP(11:2) DELIMITED BY SIZE
+                      INTO WS-FORMATTED-TIME
+               END-STRING
+           ELSE
+               MOVE FUNCTION TRIM(MSG-REC-TIMESTAMP) TO WS-FORMATTED-TIME
+           END-IF.
+       END PROGRAM VIEW-MESSAGES.
