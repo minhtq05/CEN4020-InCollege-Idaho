@@ -1,4 +1,4 @@
-"""End-to-end Epic #8 messaging tests using file-based input and output."""
+"""End-to-end Epic #8 and #9 messaging tests using file-based input."""
 
 import os
 from pathlib import Path
@@ -75,9 +75,29 @@ class MessageFileInputTests(unittest.TestCase):
                 self.assertIn("You can only message users you are connected with.", output)
                 self.assertFalse((self.directory / "InCollege-Messages.txt").exists())
 
-    def test_view_messages_placeholder_and_back(self):
-        output = self.run_input(["9", "2", "3", "6"])
-        self.assertIn("View My Messages is under construction.\n", output)
+    def test_view_messages_from_file_and_return_to_main_menu(self):
+        content = "See you at the study group!"
+        messages = self.directory / "InCollege-Messages.txt"
+        messages.write_text(f"{'bob':<20}{'alice':<20}{'2025072810300000+0000'}{content}\n")
+
+        output = self.run_input(["9", "invalid", "2", "3", "6"])
+
+        self.assertIn(
+            "invalid\nInvalid choice, please try again.\n--- Messages Menu ---\n",
+            output,
+        )
+        self.assertIn(
+            f"2\n--- Your Messages ---\nFrom: bob\nMessage: {content}\n",
+            output,
+        )
+        self.assertIn("\n3\n1. Create/Edit My Profile\n", output)
+        self.assertTrue(output.endswith("Enter your choice:\n6\n"))
+
+    def test_view_empty_inbox_at_end_of_input_file(self):
+        output = self.run_input(["9", "2"])
+
+        self.assertIn("2\n--- Your Messages ---\nYou have no messages at this time.\n", output)
+        self.assertTrue(output.endswith("Enter your choice:\n"))
 
     def test_message_over_200_characters_is_rejected(self):
         output = self.run_input(["9", "1", "bob", "x" * 201, "3", "6"], request())
